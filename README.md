@@ -66,19 +66,19 @@ A practical Security Operations Center (SOC) home lab being built to practise se
 | Network mode | NAT |
 | Installation | Manual installation |
 
-**Current milestone:** Ubuntu Server installation completed. First-boot login and network verification are pending.
+**Current milestone:** Ubuntu Server 24.04.5 LTS is installed, updated, and accessible from Windows through SSH over VirtualBox NAT port forwarding. Outbound IP connectivity and DNS resolution have been tested.
 
 > ⚙️ **Hardware note:** The host has limited memory and CPU capacity. SIEM deployment choices will be validated against actual resource usage. This project will not claim a full production-scale SOC deployment.
 
 ## 🧰 Technology stack
 
-Tools below are planned or under evaluation; they should not be interpreted as already installed or operational.
+The table distinguishes the selected local SIEM from tools that remain planned or deferred. Statuses reflect only work verified so far.
 
 | Area | Technology | Status |
 |---|---|---|
 | Virtualisation | ![VirtualBox](https://img.shields.io/badge/VirtualBox-183A61?style=flat&logo=virtualbox&logoColor=white) | VM created |
-| SOC server | ![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=flat&logo=ubuntu&logoColor=white) | Installed; first login pending |
-| SIEM | ![Wazuh](https://img.shields.io/badge/Wazuh-3B82F6?style=flat&logo=wazuh&logoColor=white) | Planned |
+| Linux server | ![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=flat&logo=ubuntu&logoColor=white) | Installed, updated, and SSH-accessible |
+| Primary SIEM | ![Splunk](https://img.shields.io/badge/Splunk-000000?style=flat&logo=splunk&logoColor=white) | Existing Windows installation; dashboard and Windows Event ID 4625 search previously verified |\n| Future SIEM option | ![Wazuh](https://img.shields.io/badge/Wazuh-3B82F6?style=flat&logo=wazuh&logoColor=white) | Deferred until resources or remote deployment are available |
 | Windows telemetry | ![Windows](https://img.shields.io/badge/Windows-0078D4?style=flat&logo=windows&logoColor=white) Sysmon | Planned |
 | Test workstation | ![Kali Linux](https://img.shields.io/badge/Kali_Linux-557C94?style=flat&logo=kalilinux&logoColor=white) | Available as a separate lab laptop |
 | Network analysis | ![Wireshark](https://img.shields.io/badge/Wireshark-1679A7?style=flat&logo=wireshark&logoColor=white) | Planned |
@@ -97,7 +97,7 @@ Tools below are planned or under evaluation; they should not be interpreted as a
 - [x] Configure SSH remote access from Windows through VirtualBox NAT port forwarding.
 - [x] Reboot Ubuntu and verify SSH reconnection from Windows.
 - [x] Apply available Ubuntu package updates.
-- [ ] Finalise the resource-appropriate SIEM deployment plan.
+- [x] Select Splunk on the Windows host as the primary local SIEM; defer local Wazuh deployment due to hardware limits.
 - [ ] Deploy SIEM and connect endpoint telemetry.
 - [ ] Complete and document detection investigations.
 - [ ] Publish final architecture and project report.
