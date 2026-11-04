@@ -1,11 +1,39 @@
-# SOC Home Lab
+<!--
+  SOC Home Lab | Portfolio README
+  Visual theme: midnight blue + cyan
+-->
 
-> **Status:** In progress  
-> **Focus:** Practical SOC Analyst L1 skills — endpoint monitoring, SIEM alert triage, investigation, and incident documentation.
+<div align="center">
 
-A hands-on Security Operations Center (SOC) home lab being built to practise security monitoring and investigation in an isolated, controlled environment. The project documents the lab design, configuration, test cases, evidence, findings, and lessons learned as each milestone is completed.
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:081A2F,50:123B5D,100:00B8D9&height=190&section=header&text=SOC%20HOME%20LAB&fontSize=42&fontColor=FFFFFF&fontAlignY=38&desc=Security%20Monitoring%20%7C%20SIEM%20%7C%20Incident%20Investigation&descAlignY=60&descSize=14" width="100%" alt="SOC Home Lab banner" />
 
-## Project objectives
+# 🛡️ SOC Home Lab
+
+**A hands-on cybersecurity portfolio focused on SOC Analyst Level 1 skills**
+
+<p>
+  <img src="https://img.shields.io/badge/Project-In%20Progress-0EA5E9?style=for-the-badge" alt="Project in progress" />
+  <img src="https://img.shields.io/badge/Focus-SOC%20Analyst%20L1-2563EB?style=for-the-badge" alt="SOC Analyst L1" />
+  <img src="https://img.shields.io/badge/Environment-Home%20Lab-0F766E?style=for-the-badge" alt="Home lab" />
+</p>
+
+<p>
+  <a href="#-project-overview">Overview</a> •
+  <a href="#-lab-environment">Environment</a> •
+  <a href="#-technology-stack">Technology</a> •
+  <a href="#-project-roadmap">Roadmap</a> •
+  <a href="#-safety">Safety</a>
+</p>
+
+</div>
+
+---
+
+## 🎯 Project overview
+
+A practical Security Operations Center (SOC) home lab being built to practise security monitoring and investigation in an isolated, controlled environment. This repository records the lab design, configuration, test cases, evidence, findings, and lessons learned as each milestone is completed.
+
+### Objectives
 
 - Build a small virtual lab using Oracle VirtualBox.
 - Deploy and configure a SIEM suitable for the available hardware.
@@ -14,7 +42,7 @@ A hands-on Security Operations Center (SOC) home lab being built to practise sec
 - Practise basic network monitoring and threat-intelligence enrichment where resources permit.
 - Produce clear, reproducible investigation notes and incident reports.
 
-## Current environment
+## 🖥️ Lab environment
 
 ### Host system
 
@@ -27,7 +55,7 @@ A hands-on Security Operations Center (SOC) home lab being built to practise sec
 | RAM | 8 GB |
 | Hypervisor | Oracle VirtualBox |
 
-### Virtual machine: SOC-Ubuntu
+### Virtual machine — SOC-Ubuntu
 
 | Setting | Configuration |
 |---|---|
@@ -40,43 +68,38 @@ A hands-on Security Operations Center (SOC) home lab being built to practise sec
 
 **Current milestone:** Ubuntu Server installation completed. First-boot login and network verification are pending.
 
-> Hardware note: The host has limited memory and CPU capacity. SIEM deployment choices will be validated against actual resource usage. The project will not claim a full production-scale SOC deployment.
+> ⚙️ **Hardware note:** The host has limited memory and CPU capacity. SIEM deployment choices will be validated against actual resource usage. This project will not claim a full production-scale SOC deployment.
 
-## Planned technology
+## 🧰 Technology stack
 
 Tools below are planned or under evaluation; they should not be interpreted as already installed or operational.
 
-| Area | Planned technology | Status |
+| Area | Technology | Status |
 |---|---|---|
-| Virtualisation | Oracle VirtualBox | VM created |
-| SOC server | Ubuntu Server | Installed; first login pending |
-| SIEM | Wazuh | Planned |
-| Windows telemetry | Sysmon, Windows Event Logs | Planned |
-| Test workstation | Kali Linux | Available as a separate lab laptop |
-| Network analysis | Wireshark | Planned |
+| Virtualisation | ![VirtualBox](https://img.shields.io/badge/VirtualBox-183A61?style=flat&logo=virtualbox&logoColor=white) | VM created |
+| SOC server | ![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=flat&logo=ubuntu&logoColor=white) | Installed; first login pending |
+| SIEM | ![Wazuh](https://img.shields.io/badge/Wazuh-3B82F6?style=flat&logo=wazuh&logoColor=white) | Planned |
+| Windows telemetry | ![Windows](https://img.shields.io/badge/Windows-0078D4?style=flat&logo=windows&logoColor=white) Sysmon | Planned |
+| Test workstation | ![Kali Linux](https://img.shields.io/badge/Kali_Linux-557C94?style=flat&logo=kalilinux&logoColor=white) | Available as a separate lab laptop |
+| Network analysis | ![Wireshark](https://img.shields.io/badge/Wireshark-1679A7?style=flat&logo=wireshark&logoColor=white) | Planned |
 | Network detection | Suricata | Optional; hardware permitting |
 | Threat intelligence | VirusTotal, AbuseIPDB | Planned |
 | File analysis | YARA | Planned |
 | Threat intelligence platform | MISP | Optional; hardware permitting |
 
-## Repository structure
+## 🗺️ Project roadmap
 
-```text
-SOC-Home-Lab/
-├── README.md
-├── Setup/
-│   └── virtualbox-setup.md
-├── Architecture/              # Planned
-├── Windows-Monitoring/        # Planned
-├── Detection-Labs/            # Planned
-├── Threat-Intelligence/       # Planned
-├── Screenshots/               # Planned
-└── Reports/                   # Planned
-```
+- [x] Create the GitHub repository.
+- [x] Create the SOC-Ubuntu VirtualBox VM.
+- [x] Install Ubuntu Server 24.04.5 LTS.
+- [ ] Verify first boot and console login.
+- [ ] Verify network connectivity and record the lab IP.
+- [ ] Finalise the resource-appropriate SIEM deployment plan.
+- [ ] Deploy SIEM and connect endpoint telemetry.
+- [ ] Complete and document detection investigations.
+- [ ] Publish final architecture and project report.
 
-Folders will be added as the corresponding lab work is completed and documented.
-
-## Project workflow
+## 🔬 Project workflow
 
 1. **Build the lab:** verify the Ubuntu VM, network connectivity, and endpoint arrangement.
 2. **Deploy monitoring:** select a resource-appropriate Wazuh deployment and connect a Windows endpoint if feasible.
@@ -85,7 +108,24 @@ Folders will be added as the corresponding lab work is completed and documented.
 5. **Investigate:** record alert context, event evidence, analysis, and conclusions.
 6. **Document:** add reproducible procedures, redacted screenshots, and incident reports.
 
-## Evidence and documentation standards
+## 📁 Repository structure
+
+```text
+SOC-Home-Lab/
+├── README.md
+├── Setup/
+│   └── virtualbox-setup.md
+├── Architecture/              # Planned
+├── Windows-Monitoring/         # Planned
+├── Detection-Labs/             # Planned
+├── Threat-Intelligence/        # Planned
+├── Screenshots/                # Planned
+└── Reports/                    # Planned
+```
+
+Folders will be added as the corresponding lab work is completed and documented.
+
+## 📝 Evidence and documentation
 
 Each completed lab exercise should include:
 
@@ -100,7 +140,7 @@ Each completed lab exercise should include:
 
 Only verified work will be marked as completed. Planned work will remain clearly labelled as planned or in progress.
 
-## Safety and responsible use
+## 🔐 Safety
 
 - Testing is restricted to systems and networks owned by the author or explicitly authorised for testing.
 - No public targets or third-party systems are to be scanned or attacked.
@@ -108,20 +148,19 @@ Only verified work will be marked as completed. Planned work will remain clearly
 - Redact public IP addresses, personal information, host identifiers, and sensitive log data before publishing evidence.
 - Do not upload VM disk images, installer ISOs, or large raw log exports.
 
-## Progress
-
-- [x] Create the GitHub repository.
-- [x] Create the SOC-Ubuntu VirtualBox VM.
-- [x] Install Ubuntu Server 24.04.5 LTS.
-- [ ] Verify first boot and console login.
-- [ ] Verify network connectivity and record the lab IP.
-- [ ] Finalise the resource-appropriate SIEM deployment plan.
-- [ ] Deploy SIEM and connect endpoint telemetry.
-- [ ] Complete and document detection investigations.
-- [ ] Publish final architecture and project report.
-
-## Author
+## 👨‍💻 Author
 
 **Shaikh A Shoaib**
 
 This repository is a learning portfolio documenting practical cybersecurity lab work. It is not a production SOC implementation.
+
+<div align="center">
+
+![GitHub last commit](https://img.shields.io/github/last-commit/shaikhashoaib/SOC-Home-Lab?style=flat-square&color=0EA5E9)
+![GitHub repo size](https://img.shields.io/github/repo-size/shaikhashoaib/SOC-Home-Lab?style=flat-square&color=0F766E)
+
+<sub>Built with curiosity, documented with evidence. 🚀</sub>
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00B8D9,50:123B5D,100:081A2F&height=90&section=footer" width="100%" alt="" />
+
+</div>
