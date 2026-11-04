@@ -94,7 +94,10 @@ Tools below are planned or under evaluation; they should not be interpreted as a
 - [x] Install Ubuntu Server 24.04.5 LTS.
 - [x] Verify first boot and console login.
 - [x] Verify network connectivity (outbound IP connectivity and DNS resolution).
-- [x] Configure SSH remote access from Windows through VirtualBox NAT port forwarding.\n- [x] Reboot Ubuntu and verify SSH reconnection from Windows.\n- [x] Apply available Ubuntu package updates.\n- [ ] Finalise the resource-appropriate SIEM deployment plan.
+- [x] Configure SSH remote access from Windows through VirtualBox NAT port forwarding.
+- [x] Reboot Ubuntu and verify SSH reconnection from Windows.
+- [x] Apply available Ubuntu package updates.
+- [ ] Finalise the resource-appropriate SIEM deployment plan.
 - [ ] Deploy SIEM and connect endpoint telemetry.
 - [ ] Complete and document detection investigations.
 - [ ] Publish final architecture and project report.
