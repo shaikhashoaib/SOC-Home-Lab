@@ -31,16 +31,16 @@
 
 ## 🎯 Project overview
 
-A practical Security Operations Center (SOC) home lab being built to practise security monitoring and investigation in an isolated, controlled environment. This repository records the lab design, configuration, test cases, evidence, findings, and lessons learned as each milestone is completed.
+A practical Security Operations Center (SOC) home lab built to practise security monitoring and investigation in a controlled environment. This repository records lab design, configuration, test cases, evidence, findings, and lessons learned as milestones are completed.
 
 ### Objectives
 
 - Build a small virtual lab using Oracle VirtualBox.
-- Deploy and configure a SIEM suitable for the available hardware.
+- Deploy a resource-appropriate SIEM.
 - Collect and analyse Windows endpoint telemetry.
-- Generate controlled security events and investigate the resulting alerts.
-- Practise basic network monitoring and threat-intelligence enrichment where resources permit.
-- Produce clear, reproducible investigation notes and incident reports.
+- Generate controlled security events and investigate them.
+- Practise detection engineering, triage, and incident documentation.
+- Add Linux telemetry and threat-intelligence enrichment as later stages.
 
 ## 🖥️ Lab environment
 
@@ -55,61 +55,80 @@ A practical Security Operations Center (SOC) home lab being built to practise se
 | RAM | 8 GB |
 | Hypervisor | Oracle VirtualBox |
 
-### Virtual machine — SOC-Ubuntu
+### Ubuntu virtual machine — SOC-Ubuntu
 
 | Setting | Configuration |
 |---|---|
-| Operating system media | Ubuntu Server 24.04.5 LTS, AMD64 |
+| Operating system | Ubuntu Server 24.04.5 LTS, AMD64 |
 | VM memory | 2 GB |
 | Virtual CPU | 1 |
 | Virtual disk | 40.48 GB |
-| Network mode | NAT |
-| Installation | Manual installation |
+| Adapter 1 | NAT — internet access |
+| Adapter 2 | Host-only — host/guest lab communication |
+| NAT SSH forwarding | Windows localhost TCP 2222 → Ubuntu TCP 22 |
 
-**Current milestone:** Ubuntu Server 24.04.5 LTS is installed, updated, and accessible from Windows through SSH over VirtualBox NAT port forwarding. Outbound IP connectivity and DNS resolution have been tested.
+Ubuntu is installed, updated, and accessible from Windows through SSH. The Host-only network was configured for direct communication between Windows and Ubuntu while NAT remains available for outbound connectivity.
 
-> ⚙️ **Hardware note:** The host has limited memory and CPU capacity. SIEM deployment choices will be validated against actual resource usage. This project will not claim a full production-scale SOC deployment.
+### SIEM host
+
+Splunk Enterprise is installed on the Windows host. The web dashboard is accessible locally, the TCP receiving port **9997** is enabled, and Windows Event Log input has been created.
+
+| Endpoint | Lab address |
+|---|---|
+| Windows Host-only adapter | `192.168.56.1` |
+| Ubuntu Host-only interface | `192.168.56.10` |
+| Splunk receiving port | TCP `9997` |
+
+> **Hardware note:** The host has 8 GB RAM and a 2-core CPU. Local Wazuh all-in-one deployment is deferred. The lab prioritises Splunk on Windows and one lightweight Ubuntu VM.
 
 ## 🧰 Technology stack
 
-The table distinguishes the selected local SIEM from tools that remain planned or deferred. Statuses reflect only work verified so far.
-
 | Area | Technology | Status |
 |---|---|---|
-| Virtualisation | ![VirtualBox](https://img.shields.io/badge/VirtualBox-183A61?style=flat&logo=virtualbox&logoColor=white) | VM created |
-| Linux server | ![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=flat&logo=ubuntu&logoColor=white) | Installed, updated, and SSH-accessible |
-| Primary SIEM | ![Splunk](https://img.shields.io/badge/Splunk-000000?style=flat&logo=splunk&logoColor=white) | Installed on Windows; web dashboard login verified |\n| Future SIEM option | ![Wazuh](https://img.shields.io/badge/Wazuh-3B82F6?style=flat&logo=wazuh&logoColor=white) | Deferred until resources or remote deployment are available |
-| Windows telemetry | ![Windows](https://img.shields.io/badge/Windows-0078D4?style=flat&logo=windows&logoColor=white) Sysmon | Planned |
-| Test workstation | ![Kali Linux](https://img.shields.io/badge/Kali_Linux-557C94?style=flat&logo=kalilinux&logoColor=white) | Available as a separate lab laptop |
-| Network analysis | ![Wireshark](https://img.shields.io/badge/Wireshark-1679A7?style=flat&logo=wireshark&logoColor=white) | Planned |
+| Virtualisation | Oracle VirtualBox | Configured |
+| Linux server | Ubuntu Server 24.04.5 LTS | Installed, updated, SSH-accessible |
+| Primary SIEM | Splunk Enterprise | Installed and operational on Windows |
+| Windows telemetry | Windows Event Logs | Security and other local event channels configured |
+| Event investigation | Splunk Search Processing Language (SPL) | Initial 4624/4625 searches completed |
+| Linux telemetry | Splunk Universal Forwarder | Not installed yet |
+| Future SIEM option | Wazuh | Deferred due to host resource limits |
+| Network analysis | Wireshark | Planned |
 | Network detection | Suricata | Optional; hardware permitting |
 | Threat intelligence | VirusTotal, AbuseIPDB | Planned |
 | File analysis | YARA | Planned |
 | Threat intelligence platform | MISP | Optional; hardware permitting |
 
+## 🔎 Completed monitoring exercise
+
+### Windows Security Event Log collection
+
+- Created a Splunk **Local Event Logs** input on the Windows host.
+- Selected the available Windows Event Log channels, including **Security**, **System**, and **Application**.
+- Confirmed events are indexed with source `WinEventLog:Security` and sourcetype `WinEventLog:Security`.
+- Observed **9,298 Security events** in one search result at the time of verification (a point-in-time count, not a fixed total).
+- Queried successful logons (Event ID `4624`): **408 events** returned in the captured search.
+- Queried failed logons (Event ID `4625`): **4 events** returned in the later investigation search.
+
+Detailed notes and SPL queries: [Windows Security Log Investigation](Reports/windows-security-log-investigation.md).
+
 ## 🗺️ Project roadmap
 
-- [x] Create the GitHub repository.
+- [x] Create the GitHub repository and project README.
 - [x] Create the SOC-Ubuntu VirtualBox VM.
-- [x] Install Ubuntu Server 24.04.5 LTS.
-- [x] Verify first boot and console login.
-- [x] Verify network connectivity (outbound IP connectivity and DNS resolution).
-- [x] Configure SSH remote access from Windows through VirtualBox NAT port forwarding.
-- [x] Reboot Ubuntu and verify SSH reconnection from Windows.
-- [x] Apply available Ubuntu package updates.
-- [x] Select Splunk on the Windows host as the primary local SIEM; defer local Wazuh deployment due to hardware limits.\n- [x] Install Splunk Enterprise on the Windows host and verify the web dashboard.
-- [ ] Configure Splunk indexes and connect endpoint telemetry.
-- [ ] Complete and document detection investigations.
-- [ ] Publish final architecture and project report.
-
-## 🔬 Project workflow
-
-1. **Build the lab:** verify the Ubuntu VM, network connectivity, and endpoint arrangement.
-2. **Deploy monitoring:** select a resource-appropriate Wazuh deployment and connect a Windows endpoint if feasible.
-3. **Collect telemetry:** configure endpoint logging and confirm events arrive at the monitoring platform.
-4. **Run controlled tests:** generate safe, authorised test events in the lab.
-5. **Investigate:** record alert context, event evidence, analysis, and conclusions.
-6. **Document:** add reproducible procedures, redacted screenshots, and incident reports.
+- [x] Install and update Ubuntu Server 24.04.5 LTS.
+- [x] Configure SSH access from Windows through NAT port forwarding.
+- [x] Add a Host-only network for Windows/Ubuntu communication.
+- [x] Install Splunk Enterprise on Windows and verify the dashboard.
+- [x] Enable Splunk TCP receiving on port 9997.
+- [x] Create a Windows Local Event Logs input in Splunk.
+- [x] Verify Windows Security events are searchable.
+- [x] Run initial SPL searches for Event IDs 4624 and 4625.
+- [x] Document the first failed-logon event review.
+- [ ] Install Splunk Universal Forwarder on Ubuntu and forward Linux logs.
+- [ ] Build a repeatable failed-logon detection and alert.
+- [ ] Create a small SOC dashboard.
+- [ ] Complete additional controlled detection and investigation exercises.
+- [ ] Publish final architecture, screenshots, and project report.
 
 ## 📁 Repository structure
 
@@ -118,37 +137,32 @@ SOC-Home-Lab/
 ├── README.md
 ├── Setup/
 │   └── virtualbox-setup.md
-├── Architecture/              # Planned
-├── Windows-Monitoring/         # Planned
-├── Detection-Labs/             # Planned
-├── Threat-Intelligence/        # Planned
-├── Screenshots/                # Planned
-└── Reports/                    # Planned
+└── Reports/
+    └── windows-security-log-investigation.md
 ```
 
-Folders will be added as the corresponding lab work is completed and documented.
+Additional folders will be added as new exercises are completed.
 
-## 📝 Evidence and documentation
+## 📝 Evidence and documentation standard
 
-Each completed lab exercise should include:
+Each lab exercise should record:
 
-- Objective and scope
+- Objective and authorised scope
 - Lab topology and prerequisites
 - Tools and versions actually used
-- Configuration steps and commands
-- Test procedure and expected result
-- Observed evidence (redacted screenshots or sample logs)
+- Configuration steps and SPL queries
+- Test procedure and observed results
 - Analysis, conclusion, and limitations
-- Cleanup or rollback steps where relevant
+- Redacted screenshots or sample logs where available
 
-Only verified work will be marked as completed. Planned work will remain clearly labelled as planned or in progress.
+Only verified work is marked completed. Screenshots have not yet been committed; they will be added after review and redaction.
 
 ## 🔐 Safety
 
 - Testing is restricted to systems and networks owned by the author or explicitly authorised for testing.
 - No public targets or third-party systems are to be scanned or attacked.
 - Never commit passwords, access tokens, API keys, private keys, or other secrets.
-- Redact public IP addresses, personal information, host identifiers, and sensitive log data before publishing evidence.
+- Redact personal information, public IP addresses, host identifiers, and sensitive log data before publishing evidence.
 - Do not upload VM disk images, installer ISOs, or large raw log exports.
 
 ## 👨‍💻 Author
