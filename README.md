@@ -78,7 +78,7 @@ The table distinguishes the selected local SIEM from tools that remain planned o
 |---|---|---|
 | Virtualisation | ![VirtualBox](https://img.shields.io/badge/VirtualBox-183A61?style=flat&logo=virtualbox&logoColor=white) | VM created |
 | Linux server | ![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=flat&logo=ubuntu&logoColor=white) | Installed, updated, and SSH-accessible |
-| Primary SIEM | ![Splunk](https://img.shields.io/badge/Splunk-000000?style=flat&logo=splunk&logoColor=white) | Selected for Windows host; installation pending |\n| Future SIEM option | ![Wazuh](https://img.shields.io/badge/Wazuh-3B82F6?style=flat&logo=wazuh&logoColor=white) | Deferred until resources or remote deployment are available |
+| Primary SIEM | ![Splunk](https://img.shields.io/badge/Splunk-000000?style=flat&logo=splunk&logoColor=white) | Installed on Windows; web dashboard login verified |\n| Future SIEM option | ![Wazuh](https://img.shields.io/badge/Wazuh-3B82F6?style=flat&logo=wazuh&logoColor=white) | Deferred until resources or remote deployment are available |
 | Windows telemetry | ![Windows](https://img.shields.io/badge/Windows-0078D4?style=flat&logo=windows&logoColor=white) Sysmon | Planned |
 | Test workstation | ![Kali Linux](https://img.shields.io/badge/Kali_Linux-557C94?style=flat&logo=kalilinux&logoColor=white) | Available as a separate lab laptop |
 | Network analysis | ![Wireshark](https://img.shields.io/badge/Wireshark-1679A7?style=flat&logo=wireshark&logoColor=white) | Planned |
@@ -97,8 +97,8 @@ The table distinguishes the selected local SIEM from tools that remain planned o
 - [x] Configure SSH remote access from Windows through VirtualBox NAT port forwarding.
 - [x] Reboot Ubuntu and verify SSH reconnection from Windows.
 - [x] Apply available Ubuntu package updates.
-- [x] Select Splunk on the Windows host as the primary local SIEM; defer local Wazuh deployment due to hardware limits.\n- [ ] Reinstall Splunk Enterprise on the Windows host and verify the web dashboard.
-- [ ] Deploy SIEM and connect endpoint telemetry.
+- [x] Select Splunk on the Windows host as the primary local SIEM; defer local Wazuh deployment due to hardware limits.\n- [x] Install Splunk Enterprise on the Windows host and verify the web dashboard.
+- [ ] Configure Splunk indexes and connect endpoint telemetry.
 - [ ] Complete and document detection investigations.
 - [ ] Publish final architecture and project report.
 
