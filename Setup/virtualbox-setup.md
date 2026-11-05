@@ -3,10 +3,13 @@
 ## Project status
 
 - [x] Created the `SOC-Ubuntu` virtual machine in Oracle VirtualBox.
-- [x] Attached the Ubuntu Server 24.04.5 LTS AMD64 installer ISO.
-- [x] Completed the Ubuntu Server installation.
-- [ ] Verify the first boot and successful console login.
-- [ ] Configure the lab network and record the VM IP address.
+- [x] Installed Ubuntu Server 24.04.5 LTS AMD64.
+- [x] Verified Ubuntu boot and login.
+- [x] Updated Ubuntu packages.
+- [x] Configured SSH remote access from Windows.
+- [x] Configured NAT port forwarding for SSH.
+- [x] Added a Host-only adapter for Windows/Ubuntu lab communication.
+- [x] Verified Windows-to-Ubuntu connectivity over the Host-only network.
 
 ## Host computer
 
@@ -25,38 +28,60 @@
 | Setting | Configuration |
 |---|---|
 | VM name | `SOC-Ubuntu` |
-| Guest OS profile | Ubuntu 64-bit (VirtualBox detected profile) |
 | Installer media | Ubuntu Server 24.04.5 LTS AMD64 |
 | Memory | 2048 MB |
 | Virtual CPUs | 1 |
 | Virtual disk | 40.48 GB |
-| Network adapter | NAT |
-| EFI | Disabled |
-| Unattended installation | Disabled; manual installation used |
+| Adapter 1 | NAT |
+| Adapter 2 | Host-only Adapter |
+| Guest NAT address observed | `10.0.2.15` |
+| Guest Host-only address configured | `192.168.56.10/24` |
+| Windows Host-only address observed | `192.168.56.1/24` |
+| SSH forwarding | Host TCP `2222` to guest TCP `22` |
 
-> Note: VirtualBox displayed an Ubuntu 24.10 guest-profile label during creation, but the attached installer ISO was Ubuntu Server 24.04.5 LTS. The installer media determines the Ubuntu release installed.
+## Installation and access notes
 
-## Installation notes
+1. Created the VM under `E:\SOC-Lab\VMs\SOC-Ubuntu`.
+2. Attached the Ubuntu Server 24.04.5 LTS AMD64 ISO from `E:\SOC-Lab\ISO`.
+3. Used manual installation.
+4. Created a local administrative account. Credentials are intentionally not documented.
+5. Installed and enabled `openssh-server`.
+6. Configured VirtualBox NAT port forwarding so Windows can connect with:
 
-1. Created the VM under the `E:\\SOC-Lab\\VMs` folder.
-2. Attached the Ubuntu Server 24.04.5 LTS AMD64 ISO from `E:\\SOC-Lab\\ISO`.
-3. Used manual installation rather than VirtualBox unattended installation.
-4. Left the HTTP proxy field blank.
-5. Created a local administrative user during Ubuntu setup. Credentials are intentionally not documented here.
-6. Ubuntu reported **Installation complete** and the VM was rebooted.
-7. First-boot login verification is still pending.
+   ```powershell
+   ssh -p 2222 socadmin@127.0.0.1
+   ```
+
+7. Added Adapter 2 as a Host-only Adapter while keeping Adapter 1 as NAT.
+8. The guest Host-only interface was brought up and assigned `192.168.56.10/24` for this lab session.
+9. Verified connectivity from Ubuntu to the Windows Host-only address:
+
+   ```bash
+   ping -c 4 192.168.56.1
+   ```
+
+   The captured test returned 4 packets received and 0% packet loss.
+
+10. Verified the Splunk receiving port from Ubuntu:
+
+   ```bash
+   timeout 3 bash -c 'cat < /dev/null > /dev/tcp/192.168.56.1/9997' && echo CONNECTED || echo FAILED
+   ```
+
+   The test returned `CONNECTED` after a Windows Firewall inbound rule was created for TCP 9997 from the Ubuntu Host-only IP.
+
+> **Address persistence:** The Ubuntu Host-only IPv4 address was assigned manually with `ip addr add`; this may not persist after reboot. Configure persistent addressing only after confirming the VirtualBox Host-only network settings.
 
 ## Resource considerations
 
-The host has 8 GB RAM and a 2-core processor. The VM is intentionally configured with 2 GB RAM and 1 virtual CPU to leave resources for Windows. A full Wazuh all-in-one deployment may be too demanding on this host; resource usage will be monitored and the architecture adjusted if necessary.
+The host has 8 GB RAM and a 2-core processor. The Ubuntu VM is intentionally configured with 2 GB RAM and 1 virtual CPU to leave resources for Windows. A full Wazuh all-in-one deployment may be too demanding on this host, so Splunk Enterprise on Windows is the current primary SIEM.
 
 ## Next steps
 
-- Confirm Ubuntu boots from its virtual disk and log in successfully.
-- Update Ubuntu packages.
-- Verify network connectivity and record the VM's private lab IP address.
-- Decide on a suitable lightweight Wazuh deployment before installing the SIEM.
+- Install Splunk Universal Forwarder on Ubuntu.
+- Configure Ubuntu authentication/system log forwarding to Splunk at `192.168.56.1:9997`.
+- Verify Linux events in Splunk before marking forwarding complete.
 
 ## Evidence
 
-Screenshots will be added here after they are captured and reviewed. Sensitive information such as passwords, tokens, public IP addresses, and unredacted logs must not be committed.
+Screenshots have not yet been committed. Add reviewed and redacted evidence here or under a dedicated screenshots folder. Never commit passwords, tokens, public IP addresses, or unredacted personal log data.
