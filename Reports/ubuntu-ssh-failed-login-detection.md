@@ -1,7 +1,7 @@
 # Ubuntu SSH Failed-Login Detection
 
 **Project:** SOC Home Lab  
-**Status:** Detection search validated; scheduled alert created; alert execution pending  
+**Status:** Core exercise documented; detection search validated; scheduled alert configured (execution not verified)  
 **Last documented:** 2026-11-07
 
 ## 1. Objective
@@ -107,7 +107,7 @@ The controlled test produced three failed SSH authentication events for the same
 
 For this lab, the activity was analyst-generated and should be classified as an expected test / informational result. In a real investigation, validate the source, time window, target account, surrounding authentication activity, asset owner, and whether the attempts were authorised before escalating.
 
-## 8. Remaining validation and improvement
+## 8. Project handoff and optional follow-up
 
 - Check the alert after its next scheduled execution.
 - Confirm whether a fired event appears in the alert history.
@@ -118,6 +118,6 @@ For this lab, the activity was analyst-generated and should be classified as an 
 
 ## 9. Evidence and limitations
 
-This report records the lab configuration and observations shown in Splunk screenshots on 2026-11-07. Event counts and timestamps are snapshots and will change as new events arrive. The source IP is recorded exactly as Splunk displayed it; its broader network role has not been independently established in this report.
+This report records the lab configuration and observations reviewed in Splunk on 2026-11-07. Event counts and timestamps are snapshots and will change as new events arrive. The source IP is recorded exactly as Splunk displayed it; its broader network role has not been independently established in this report.
 
 No passwords, tokens, or private keys are included.
