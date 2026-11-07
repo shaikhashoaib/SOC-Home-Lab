@@ -12,7 +12,7 @@
 **A hands-on cybersecurity portfolio focused on SOC Analyst Level 1 skills**
 
 <p>
-  <img src="https://img.shields.io/badge/Project-In%20Progress-0EA5E9?style=for-the-badge" alt="Project in progress" />
+  <img src="https://img.shields.io/badge/Project-Completed-16A34A?style=for-the-badge" alt="Project in progress" />
   <img src="https://img.shields.io/badge/Focus-SOC%20Analyst%20L1-2563EB?style=for-the-badge" alt="SOC Analyst L1" />
   <img src="https://img.shields.io/badge/Environment-Home%20Lab-0F766E?style=for-the-badge" alt="Home lab" />
 </p>
@@ -31,7 +31,9 @@
 
 ## 🎯 Project overview
 
-A practical Security Operations Center (SOC) home lab built to practise security monitoring and investigation in a controlled environment. This repository records lab design, configuration, test cases, evidence, findings, and lessons learned as milestones are completed.
+A practical Security Operations Center (SOC) home lab built to practise security monitoring and investigation in a controlled environment. The core lab build, Windows and Linux log collection, initial investigations, threshold-based detection search, and alert configuration are documented. Known validation limitations are stated transparently.
+
+<badge label="Core lab project completed" color="success" />
 
 ### Objectives
 
@@ -117,16 +119,16 @@ A scheduled alert named **SSH - Multiple Failed Login Attempts** has been create
 
 | Configuration | Verified value |
 |---|---|
-| Status | Enabled |
+| Status | Enabled (saved in Splunk) |
 | Alert type | Scheduled |
 | Schedule | Hourly, at 0 minutes past the hour |
 | Trigger condition | Number of results greater than 0 |
 | Trigger action | Log Event |
 | Sharing | Private |
-| Latest observed next run | Nov 7, 2026, 3:00 PM (Splunk UI) |
-| Fired events at last check | None displayed; pending next-run validation |
+| Latest observed next run | Nov 7, 2026, 3:00 PM (Splunk UI; historical observation) |
+| Fired events at last check | None displayed; execution not confirmed |
 
-**Important validation limitation:** The search uses five-minute time buckets, but the saved scheduled search runs hourly. The alert has been created, but it has not yet been confirmed to fire. After the next run, inspect its fired-event history and verify that the Log Event action writes the expected event. Consider aligning the schedule and search time range before using this as a timely operational detection.
+**Validation limitation:** The SPL detection search returned a matching result for three failed SSH attempts. The scheduled alert is saved and enabled, but Splunk showed no fired events at the last check, so scheduled execution and the Log Event output remain unverified. The search groups events into five-minute buckets while the alert runs hourly. This is documented as a known limitation; do not describe the alert as production-validated.
 
 ## 🗺️ Project roadmap
 
@@ -149,7 +151,7 @@ A scheduled alert named **SSH - Multiple Failed Login Attempts** has been create
 - [ ] Review alert execution history and confirm the Log Event action.
 - [ ] Complete final evidence review and portfolio documentation.
 
-> **Alert validation note (Nov 7, 2026):** The alert is saved and enabled with a Log Event action. No fired events were displayed at the time of the latest check. Execution is not yet validated. The saved schedule is hourly, while the SPL groups events into five-minute buckets; this is a lab configuration and should be reviewed before treating it as a production-ready detection.
+> **Known limitation (last checked Nov 7, 2026):** No fired events were displayed for the scheduled alert. Its execution and Log Event action remain unverified. The alert schedule is hourly while the SPL uses five-minute buckets. The core portfolio project is complete, but this alert should not be presented as a verified production-ready detection.
 
 ## 📁 Repository structure
 
@@ -162,7 +164,7 @@ SOC-Home-Lab/
     └── windows-security-log-investigation.md
 ```
 
-Additional folders will be added as new exercises are completed.
+The repository contains the setup guide and both Windows and Ubuntu investigation reports.
 
 ## 📝 Evidence and documentation standard
 
@@ -176,7 +178,7 @@ Each lab exercise should record:
 - Analysis, conclusion, and limitations
 - Redacted screenshots or sample logs where available
 
-Only verified work is marked completed. Screenshots have not yet been committed; they will be added after review and redaction.
+Only verified work is marked completed. Screenshots have not yet been committed; add them only after review and redaction.
 
 ## 🔐 Safety
 
