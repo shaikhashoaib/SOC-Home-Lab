@@ -97,14 +97,14 @@ Expand an event and review fields such as `TargetUserName`, `Status`, `Sub_Statu
 - Event IDs 4624 and 4625 were searchable.
 - A first failed-logon event was expanded and reviewed.
 - The event was not labelled malicious because the evidence was insufficient.
-- The next investigation task is to generate and identify a clearly attributable test event, then build a threshold-based failed-logon detection.
+- The Windows event review remains an initial triage exercise. The separately documented Ubuntu SSH exercise demonstrates the completed threshold-based failed-login detection and scheduled alert workflow.
 
 ## 7. Limitations and next steps
 
 - Event counts are snapshots and will change as new events arrive.
 - The current Windows event collection is local to the Splunk host.
 - Ubuntu authentication-log forwarding was completed and is documented separately in [Ubuntu SSH Failed-Login Detection](ubuntu-ssh-failed-login-detection.md).
-- Screenshots were reviewed during the working session but have **not** been uploaded to this repository.
+- The repository has a `Screenshots/` folder containing two image files. Their exact contents and redaction status should be checked before relying on them as evidence for this Windows-specific report.
 - Do not publish raw event exports or screenshots containing usernames, machine identifiers, IPs, or other personal information without reviewing and redacting them.
 
-The Windows investigation is complete as an initial triage exercise. The related Linux log-forwarding and SSH threshold-detection exercise is documented in the companion report.
+The Windows investigation is complete as an initial triage exercise. Its inconclusive 4625 attribution is intentionally preserved rather than presented as a confirmed user-password failure. The related Linux log-forwarding and SSH threshold-detection exercise is documented in the companion report.
