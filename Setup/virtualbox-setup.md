@@ -76,11 +76,9 @@
 
 The host has 8 GB RAM and a 2-core processor. The Ubuntu VM is intentionally configured with 2 GB RAM and 1 virtual CPU to leave resources for Windows. A full Wazuh all-in-one deployment may be too demanding on this host, so Splunk Enterprise on Windows is the current primary SIEM.
 
-## Next steps
+## Completed follow-on work
 
-- Install Splunk Universal Forwarder on Ubuntu.
-- Configure Ubuntu authentication/system log forwarding to Splunk at `192.168.56.1:9997`.
-- Verify Linux events in Splunk before marking forwarding complete.
+The Ubuntu forwarding stage was completed after this base VM setup. Splunk Universal Forwarder 10.4.3 was installed, `/var/log/auth.log` was monitored, and authentication events were verified in the Windows Splunk instance. The related failed-SSH detection and scheduled alert are documented in [Ubuntu SSH Failed-Login Detection](../Reports/ubuntu-ssh-failed-login-detection.md).
 
 ## Evidence
 
