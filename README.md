@@ -147,9 +147,9 @@ A scheduled alert named **SSH - Multiple Failed Login Attempts** has been create
 - [x] Verify Ubuntu `auth.log` events arrive in Windows Splunk.
 - [x] Run a controlled failed SSH login test and build a threshold-based SPL search.
 - [x] Create and enable a scheduled Splunk alert for the SSH failed-login threshold.
-- [ ] Verify the alert fires on its next scheduled execution (hourly schedule; next run shown as 3:00 PM on Nov 7, 2026).
-- [ ] Review alert execution history and confirm the Log Event action.
-- [ ] Complete final evidence review and portfolio documentation.
+- [x] Verify the alert fires on its five-minute schedule; confirmed event at 3:00:02 PM IST on Nov 7, 2026.
+- [x] Review alert execution and confirm the Log Event action writes to the `main` index.
+- [x] Complete final evidence review and portfolio documentation.
 
 
 
