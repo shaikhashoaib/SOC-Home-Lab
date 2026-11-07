@@ -160,8 +160,12 @@ SOC-Home-Lab/
 ├── README.md
 ├── Setup/
 │   └── virtualbox-setup.md
-└── Reports/
-    └── windows-security-log-investigation.md
+├── Reports/
+│   ├── windows-security-log-investigation.md
+│   └── ubuntu-ssh-failed-login-detection.md
+└── Screenshots/
+    ├── Screenshot (187).png
+    └── download.png
 ```
 
 The repository contains the VirtualBox setup guide, Windows and Ubuntu investigation reports, and two image files under `Screenshots/`.
