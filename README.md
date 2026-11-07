@@ -121,14 +121,14 @@ A scheduled alert named **SSH - Multiple Failed Login Attempts** has been create
 |---|---|
 | Status | Enabled (saved in Splunk) |
 | Alert type | Scheduled |
-| Schedule | Hourly, at 0 minutes past the hour |
+| Schedule | Every 5 minutes (`*/5 * * * *`) |
 | Trigger condition | Number of results greater than 0 |
 | Trigger action | Log Event |
 | Sharing | Private |
-| Latest observed next run | Nov 7, 2026, 3:00 PM (Splunk UI; historical observation) |
-| Fired events at last check | None displayed; execution not confirmed |
+| Confirmed fired event | Nov 7, 2026, 3:00:02 PM IST |
+| Log Event output | Confirmed in `main` index |
 
-**Validation limitation:** The SPL detection search returned a matching result for three failed SSH attempts. The scheduled alert is saved and enabled, but Splunk showed no fired events at the last check, so scheduled execution and the Log Event output remain unverified. The search groups events into five-minute buckets while the alert runs hourly. This is documented as a known limitation; do not describe the alert as production-validated.
+**Validation result:** The detection search returned three failed SSH attempts for `wronguser` from `10.0.2.2` on `soc-ubuntu`. The scheduled alert was changed to run every five minutes with a five-minute search time range. A fired Log Event was then confirmed in the `main` index at **Nov 7, 2026, 3:00:02 PM IST**, with the message: `SSH failed login threshold reached: wronguser from 10.0.2.2 with 3 failures.` This validates the lab alert path. The Splunk UI had warned that scheduled searches stop after the Enterprise Trial License expires.
 
 ## 🗺️ Project roadmap
 
@@ -151,7 +151,7 @@ A scheduled alert named **SSH - Multiple Failed Login Attempts** has been create
 - [ ] Review alert execution history and confirm the Log Event action.
 - [ ] Complete final evidence review and portfolio documentation.
 
-> **Known limitation (last checked Nov 7, 2026):** No fired events were displayed for the scheduled alert. Its execution and Log Event action remain unverified. The alert schedule is hourly while the SPL uses five-minute buckets. The core portfolio project is complete, but this alert should not be presented as a verified production-ready detection.
+
 
 ## 📁 Repository structure
 
