@@ -84,4 +84,4 @@ The host has 8 GB RAM and a 2-core processor. The Ubuntu VM is intentionally con
 
 ## Evidence
 
-Screenshots have not yet been committed. Add reviewed and redacted evidence here or under a dedicated screenshots folder. Never commit passwords, tokens, public IP addresses, or unredacted personal log data.
+Two image files are currently present in the repository's `Screenshots/` folder. Their filenames are generic; add clear captions or rename them after confirming their contents. Never commit passwords, tokens, public IP addresses, or unredacted personal log data.
