@@ -1,7 +1,7 @@
 # Ubuntu SSH Failed-Login Detection
 
 **Project:** SOC Home Lab  
-**Status:** Core exercise documented; detection search validated; scheduled alert configured (execution not verified)  
+**Status:** Detection search validated; five-minute scheduled alert fired; Log Event output verified  
 **Last documented:** 2026-11-07
 
 ## 1. Objective
@@ -57,7 +57,7 @@ These events were intentionally generated for the lab. They are not evidence of 
 
 ## 5. SPL field extraction and threshold detection
 
-The following search extracts the username and source IP, groups matching events into five-minute buckets, and returns groups with at least three failed attempts:
+The initial search grouped events into five-minute buckets. During validation, three attempts straddled a five-minute boundary, so the alert's final SPL uses the five-minute search time range and groups the events by source IP, username, and host:
 
 ```spl
 index=main source="/var/log/auth.log" "Failed password"
@@ -86,20 +86,36 @@ A scheduled alert was created in Splunk Enterprise with the following settings, 
 | Description | Detects 3 or more failed SSH login attempts from the same source IP within 5 minutes. |
 | Permissions | Private |
 | Alert type | Scheduled |
-| Schedule | Hourly, at 0 minutes past the hour |
+| Schedule | Cron: `*/5 * * * *` (every 5 minutes) |
 | Trigger condition | Number of results greater than 0 |
 | Trigger mode | Once |
 | Trigger action | Log Event |
 | Status | Enabled |
-| Next scheduled run shown | Nov 7, 2026, 3:00 PM |
+| Search time range | Last 5 minutes |
 
 The Log Event action was configured to write an event to the `main` index, using source `SSH_Failed_Login_Alert`, sourcetype `ssh_failed_login_alert`, and host `soc-ubuntu`.
 
-### Alert validation status
+### Alert validation result
 
-At the latest check on Nov 7, 2026, the alert details page showed **no fired events**. The alert is saved and enabled, but its scheduled execution and Log Event output have **not yet been verified**. The next scheduled run displayed by Splunk was 3:00 PM on Nov 7, 2026.
+The alert fired successfully on **Nov 7, 2026 at 3:00:02 PM IST**. The Log Event action wrote the following event to the `main` index:
 
-**Schedule/search-window caveat:** The SPL groups events into five-minute buckets, but the saved scheduled alert runs hourly. This can delay detection and may not behave as intended for a rolling five-minute detection. After confirming the current scheduled run, review the search time range and schedule together and align them before calling the alert operationally reliable. The Splunk UI also warned that the scheduled search will not run after the Splunk Enterprise Trial License expires.
+```text
+SSH failed login threshold reached: wronguser from 10.0.2.2 with 3 failures.
+```
+
+The returned event showed:
+
+| Field | Verified value |
+|---|---|
+| Host | `soc-ubuntu` |
+| Source | `SSH_Failed_Login_Alert` |
+| Sourcetype | `ssh_failed_login_alert` |
+| Index | `main` |
+| Failed attempts | `3` |
+| Username | `wronguser` |
+| Source IP | `10.0.2.2` |
+
+This confirms the scheduled alert executed and the Log Event action successfully indexed the alert record. The Splunk UI also warned that the scheduled search will stop running after the Splunk Enterprise Trial License expires.
 
 ## 7. Initial SOC assessment
 
