@@ -57,7 +57,7 @@ These events were intentionally generated for the lab. They are not evidence of 
 
 ## 5. SPL field extraction and threshold detection
 
-The initial search grouped events into five-minute buckets. During validation, three attempts straddled a five-minute boundary, so the alert's final SPL uses the five-minute search time range and groups the events by source IP, username, and host:
+The final detection search counts matching failures by source IP, username, and host. The scheduled alert is configured with a **Last 5 minutes** search time range and runs every five minutes:
 
 ```spl
 index=main source="/var/log/auth.log" "Failed password"
@@ -93,7 +93,7 @@ A scheduled alert was created in Splunk Enterprise with the following settings, 
 | Status | Enabled |
 | Search time range | Last 5 minutes |
 
-The Log Event action was configured to write an event to the `main` index, using source `SSH_Failed_Login_Alert`, sourcetype `ssh_failed_login_alert`, and host `soc-ubuntu`.
+The Log Event action was configured to write an event to the `main` index, using source `SSH_Failed_Login_Alert`, sourcetype `ssh_failed_login_alert`, and host `soc-ubuntu`. This is the host value set on the alert action; the raw authentication search displayed `soc-ubantu` in its result.
 
 ### Alert validation result
 
@@ -115,7 +115,7 @@ The returned event showed:
 | Username | `wronguser` |
 | Source IP | `10.0.2.2` |
 
-This confirms the scheduled alert executed and the Log Event action successfully indexed the alert record. The Splunk UI also warned that the scheduled search will stop running after the Splunk Enterprise Trial License expires.
+This confirms the scheduled alert executed and the Log Event action successfully indexed the alert record. The Splunk UI warned that the scheduled search will stop running after the Splunk Enterprise Trial License expires. This is an environment/licensing limitation, not a failed detection test.
 
 ## 7. Initial SOC assessment
 
