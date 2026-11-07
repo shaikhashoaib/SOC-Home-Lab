@@ -111,6 +111,23 @@ Splunk Enterprise is installed on the Windows host. The web dashboard is accessi
 
 Detailed notes and SPL queries: [Windows Security Log Investigation](Reports/windows-security-log-investigation.md).
 
+## 🚨 Scheduled detection alert
+
+A scheduled alert named **SSH - Multiple Failed Login Attempts** has been created in Splunk Enterprise.
+
+| Configuration | Verified value |
+|---|---|
+| Status | Enabled |
+| Alert type | Scheduled |
+| Schedule | Hourly, at 0 minutes past the hour |
+| Trigger condition | Number of results greater than 0 |
+| Trigger action | Log Event |
+| Sharing | Private |
+| Latest observed next run | Nov 7, 2026, 3:00 PM (Splunk UI) |
+| Fired events at last check | None displayed; pending next-run validation |
+
+**Important validation limitation:** The search uses five-minute time buckets, but the saved scheduled search runs hourly. The alert has been created, but it has not yet been confirmed to fire. After the next run, inspect its fired-event history and verify that the Log Event action writes the expected event. Consider aligning the schedule and search time range before using this as a timely operational detection.
+
 ## 🗺️ Project roadmap
 
 - [x] Create the GitHub repository and project README.
@@ -127,10 +144,12 @@ Detailed notes and SPL queries: [Windows Security Log Investigation](Reports/win
 - [x] Install Splunk Universal Forwarder on Ubuntu and forward Linux authentication logs.
 - [x] Verify Ubuntu `auth.log` events arrive in Windows Splunk.
 - [x] Run a controlled failed SSH login test and build a threshold-based SPL search.
-- [ ] Create a scheduled failed-logon alert.
-- [ ] Create a small SOC dashboard.
-- [ ] Complete additional controlled detection and investigation exercises.
-- [ ] Publish final architecture, screenshots, and project report.
+- [x] Create and enable a scheduled Splunk alert for the SSH failed-login threshold.
+- [ ] Verify the alert fires on its next scheduled execution (hourly schedule; next run shown as 3:00 PM on Nov 7, 2026).
+- [ ] Review alert execution history and confirm the Log Event action.
+- [ ] Complete final evidence review and portfolio documentation.
+
+> **Alert validation note (Nov 7, 2026):** The alert is saved and enabled with a Log Event action. No fired events were displayed at the time of the latest check. Execution is not yet validated. The saved schedule is hourly, while the SPL groups events into five-minute buckets; this is a lab configuration and should be reviewed before treating it as a production-ready detection.
 
 ## 📁 Repository structure
 
