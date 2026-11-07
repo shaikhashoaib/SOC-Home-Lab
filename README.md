@@ -42,7 +42,8 @@ A practical Security Operations Center (SOC) home lab built around Splunk Enterp
 - Collect and analyse Windows endpoint telemetry.
 - Generate controlled security events and investigate them.
 - Practise detection engineering, triage, and incident documentation.
-- Forward Linux authentication telemetry and investigate controlled failed SSH logins.\n- Document threat-intelligence enrichment as a possible future extension.
+- Forward Linux authentication telemetry and investigate controlled failed SSH logins.
+- Document threat-intelligence enrichment as a possible future extension.
 
 ## 🖥️ Lab environment
 
