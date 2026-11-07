@@ -90,7 +90,7 @@ Splunk Enterprise is installed on the Windows host. The web dashboard is accessi
 | Primary SIEM | Splunk Enterprise | Installed and operational on Windows |
 | Windows telemetry | Windows Event Logs | Security and other local event channels configured |
 | Event investigation | Splunk Search Processing Language (SPL) | Initial 4624/4625 searches completed |
-| Linux telemetry | Splunk Universal Forwarder | Not installed yet |
+| Linux telemetry | Splunk Universal Forwarder 10.4.3 | Installed; `/var/log/auth.log` forwarding verified |
 | Future SIEM option | Wazuh | Deferred due to host resource limits |
 | Network analysis | Wireshark | Planned |
 | Network detection | Suricata | Optional; hardware permitting |
@@ -124,8 +124,10 @@ Detailed notes and SPL queries: [Windows Security Log Investigation](Reports/win
 - [x] Verify Windows Security events are searchable.
 - [x] Run initial SPL searches for Event IDs 4624 and 4625.
 - [x] Document the first failed-logon event review.
-- [ ] Install Splunk Universal Forwarder on Ubuntu and forward Linux logs.
-- [ ] Build a repeatable failed-logon detection and alert.
+- [x] Install Splunk Universal Forwarder on Ubuntu and forward Linux authentication logs.
+- [x] Verify Ubuntu `auth.log` events arrive in Windows Splunk.
+- [x] Run a controlled failed SSH login test and build a threshold-based SPL search.
+- [ ] Create a scheduled failed-logon alert.
 - [ ] Create a small SOC dashboard.
 - [ ] Complete additional controlled detection and investigation exercises.
 - [ ] Publish final architecture, screenshots, and project report.
