@@ -12,7 +12,7 @@
 **A hands-on cybersecurity portfolio focused on SOC Analyst Level 1 skills**
 
 <p>
-  <img src="https://img.shields.io/badge/Project-Completed-16A34A?style=for-the-badge" alt="Project in progress" />
+  <img src="https://img.shields.io/badge/Project-Completed-16A34A?style=for-the-badge" alt="Project completed" />
   <img src="https://img.shields.io/badge/Focus-SOC%20Analyst%20L1-2563EB?style=for-the-badge" alt="SOC Analyst L1" />
   <img src="https://img.shields.io/badge/Environment-Home%20Lab-0F766E?style=for-the-badge" alt="Home lab" />
 </p>
@@ -31,7 +31,7 @@
 
 ## 🎯 Project overview
 
-A practical Security Operations Center (SOC) home lab built to practise security monitoring and investigation in a controlled environment. The core lab build, Windows and Linux log collection, initial investigations, threshold-based detection search, and alert configuration are documented. Known validation limitations are stated transparently.
+A practical Security Operations Center (SOC) home lab built to practise security monitoring and investigation in a controlled environment. The project documents Windows and Linux log collection, initial event triage, a controlled SSH failed-login test, a threshold-based SPL detection, and a scheduled Splunk alert whose Log Event output was verified.
 
 <badge label="Core lab project completed" color="success" />
 
@@ -42,7 +42,7 @@ A practical Security Operations Center (SOC) home lab built to practise security
 - Collect and analyse Windows endpoint telemetry.
 - Generate controlled security events and investigate them.
 - Practise detection engineering, triage, and incident documentation.
-- Add Linux telemetry and threat-intelligence enrichment as later stages.
+- Forward Linux authentication telemetry and investigate controlled failed SSH logins.\n- Document threat-intelligence enrichment as a possible future extension.
 
 ## 🖥️ Lab environment
 
@@ -164,7 +164,7 @@ SOC-Home-Lab/
     └── windows-security-log-investigation.md
 ```
 
-The repository contains the setup guide and both Windows and Ubuntu investigation reports.
+The repository contains the VirtualBox setup guide, Windows and Ubuntu investigation reports, and two image files under `Screenshots/`.
 
 ## 📝 Evidence and documentation standard
 
@@ -178,7 +178,7 @@ Each lab exercise should record:
 - Analysis, conclusion, and limitations
 - Redacted screenshots or sample logs where available
 
-Only verified work is marked completed. Screenshots have not yet been committed; add them only after review and redaction.
+Only verified work is marked completed. Two screenshot image files are present in `Screenshots/`; review their contents, filenames, captions, and redaction before treating them as formal evidence.
 
 ## 🔐 Safety
 
