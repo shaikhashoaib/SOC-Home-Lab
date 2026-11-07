@@ -61,20 +61,12 @@ The final detection search counts matching failures by source IP, username, and 
 
 ```spl
 index=main source="/var/log/auth.log" "Failed password"
-| rex "Failed password for (invalid user )?(?<username>\S+) from (?<src_ip>\d+\.\d+\.\d+\.\d+)"
-| bin _time span=5m
-| stats count as failed_attempts by _time src_ip username host
+| rex "Failed password for (invalid user )?(?<username>\\S+) from (?<src_ip>\\d+\\.\\d+\\.\\d+\\.\\d+)"
+| stats count as failed_attempts by src_ip username host
 | where failed_attempts >= 3
-| sort - failed_attempts
 ```
 
-The captured result showed:
-
-| Time bucket | Source IP | Username | Failed attempts |
-|---|---|---|---:|
-| 2026-11-07 14:10 | `10.0.2.2` | `wronguser` | 3 |
-
-The username and source IP extraction were visually verified in Splunk's Statistics view.
+The captured Statistics result showed source IP `10.0.2.2`, username `wronguser`, host `soc-ubantu` (as displayed in that search result), and **3** failed attempts. The alert action's separately indexed event used `soc-ubuntu` as its host metadata.
 
 ## 6. Scheduled Splunk alert configuration
 
@@ -123,14 +115,12 @@ The controlled test produced three failed SSH authentication events for the same
 
 For this lab, the activity was analyst-generated and should be classified as an expected test / informational result. In a real investigation, validate the source, time window, target account, surrounding authentication activity, asset owner, and whether the attempts were authorised before escalating.
 
-## 8. Project handoff and optional follow-up
+## 8. Completion status
 
-- Check the alert after its next scheduled execution.
-- Confirm whether a fired event appears in the alert history.
-- Verify that the Log Event action writes the expected record to `main`.
-- Align the scheduled search interval and five-minute detection window.
-- Add reviewed and redacted screenshots to the repository.
-- Complete the final project summary and interview walkthrough.
+- [x] Verify the scheduled alert fires on its five-minute schedule.
+- [x] Confirm the Log Event action writes an event to the `main` index.
+- [x] Document the final SPL, alert configuration, and observed output.
+- [ ] Optional improvement: add descriptive captions to screenshots after checking their contents.
 
 ## 9. Evidence and limitations
 
