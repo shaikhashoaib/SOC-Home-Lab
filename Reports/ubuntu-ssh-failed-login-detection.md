@@ -61,7 +61,7 @@ The final detection search counts matching failures by source IP, username, and 
 
 ```spl
 index=main source="/var/log/auth.log" "Failed password"
-| rex "Failed password for (invalid user )?(?<username>\\S+) from (?<src_ip>\\d+\\.\\d+\\.\\d+\\.\\d+)"
+| rex "Failed password for (invalid user )?(?<username>\S+) from (?<src_ip>\d+\.\d+\.\d+\.\d+)"
 | stats count as failed_attempts by src_ip username host
 | where failed_attempts >= 3
 ```
