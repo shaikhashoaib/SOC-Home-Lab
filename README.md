@@ -31,7 +31,7 @@
 
 ## 🎯 Project overview
 
-A practical Security Operations Center (SOC) home lab built to practise security monitoring and investigation in a controlled environment. The project documents Windows and Linux log collection, initial event triage, a controlled SSH failed-login test, a threshold-based SPL detection, and a scheduled Splunk alert whose Log Event output was verified.
+A practical Security Operations Center (SOC) home lab built around Splunk Enterprise on Windows and Ubuntu Server telemetry. It documents Windows and Linux log collection, initial event triage, a controlled SSH failed-login test, a threshold-based SPL detection, and a scheduled Splunk alert whose Log Event output was verified.
 
 <badge label="Core lab project completed" color="success" />
 
