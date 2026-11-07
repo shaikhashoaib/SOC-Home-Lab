@@ -103,8 +103,8 @@ Expand an event and review fields such as `TargetUserName`, `Status`, `Sub_Statu
 
 - Event counts are snapshots and will change as new events arrive.
 - The current Windows event collection is local to the Splunk host.
-- Ubuntu log forwarding is not yet configured; Splunk Universal Forwarder has not yet been installed on Ubuntu.
+- Ubuntu authentication-log forwarding was completed and is documented separately in [Ubuntu SSH Failed-Login Detection](ubuntu-ssh-failed-login-detection.md).
 - Screenshots were reviewed during the working session but have **not** been uploaded to this repository.
 - Do not publish raw event exports or screenshots containing usernames, machine identifiers, IPs, or other personal information without reviewing and redacting them.
 
-Next: install and configure Splunk Universal Forwarder on Ubuntu, verify Linux authentication logs, and create a controlled failed-logon detection with a documented threshold and investigation procedure.
+The Windows investigation is complete as an initial triage exercise. The related Linux log-forwarding and SSH threshold-detection exercise is documented in the companion report.
