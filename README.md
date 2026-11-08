@@ -1,113 +1,36 @@
-<!--
-  SOC Home Lab | Portfolio README
-  Visual theme: midnight blue + cyan
--->
+# SOC Analyst L1 — Security Operations Home Lab
 
-<div align="center">
+A practical cybersecurity portfolio documenting hands-on work with SIEM monitoring, Windows and Linux log collection, authentication-event analysis, and alert creation.
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:081A2F,50:123B5D,100:00B8D9&height=190&section=header&text=SOC%20HOME%20LAB&fontSize=42&fontColor=FFFFFF&fontAlignY=38&desc=Security%20Monitoring%20%7C%20SIEM%20%7C%20Incident%20Investigation&descAlignY=60&descSize=14" width="100%" alt="SOC Home Lab banner" />
-
-# 🛡️ SOC Home Lab
-
-**A hands-on cybersecurity portfolio focused on SOC Analyst Level 1 skills**
-
-<p>
-  <img src="https://img.shields.io/badge/Project-Completed-16A34A?style=for-the-badge" alt="Project completed" />
-  <img src="https://img.shields.io/badge/Focus-SOC%20Analyst%20L1-2563EB?style=for-the-badge" alt="SOC Analyst L1" />
-  <img src="https://img.shields.io/badge/Environment-Home%20Lab-0F766E?style=for-the-badge" alt="Home lab" />
-</p>
-
-<p>
-  <a href="#-project-overview">Overview</a> •
-  <a href="#-lab-environment">Environment</a> •
-  <a href="#-technology-stack">Technology</a> •
-  <a href="#-project-roadmap">Roadmap</a> •
-  <a href="#-safety">Safety</a>
-</p>
-
-</div>
+**Author:** Shaikh A Shoaib  
+**Focus:** SOC Analyst L1 | SIEM | Security Monitoring | Incident Investigation
 
 ---
 
-## 🎯 Project overview
+## Project overview
 
-A practical Security Operations Center (SOC) home lab built around Splunk Enterprise on Windows and Ubuntu Server telemetry. It documents Windows and Linux log collection, initial event triage, a controlled SSH failed-login test, a threshold-based SPL detection, and a scheduled Splunk alert whose Log Event output was verified.
+This home lab uses **Splunk Enterprise on Windows** and **Ubuntu Server** in Oracle VirtualBox to practise foundational Security Operations Center (SOC) workflows.
 
-<badge label="Core lab project completed" color="success" />
+The project demonstrates:
 
-### Objectives
+- Collecting and searching Windows Security Event Logs.
+- Forwarding Linux authentication logs to Splunk.
+- Reviewing successful and failed authentication events.
+- Creating a threshold-based detection for repeated SSH login failures.
+- Configuring and validating a scheduled Splunk alert.
+- Recording configuration, investigation steps, and observed results.
 
-- Build a small virtual lab using Oracle VirtualBox.
-- Deploy a resource-appropriate SIEM.
-- Collect and analyse Windows endpoint telemetry.
-- Generate controlled security events and investigate them.
-- Practise detection engineering, triage, and incident documentation.
-- Forward Linux authentication telemetry and investigate controlled failed SSH logins.
-- Document threat-intelligence enrichment as a possible future extension.
+This is a personal learning environment, not a production SOC deployment.
 
-## 🖥️ Lab environment
+## Skills and learning
 
-### Host system
-
-| Component | Specification |
-|---|---|
-| Computer | HP ProDesk 400 G1 SFF |
-| Host OS | Windows 10 Pro 64-bit |
-| CPU | Intel Core i3-4160 @ 3.60 GHz |
-| CPU topology | 2 physical cores / 4 logical processors |
-| RAM | 8 GB |
-| Hypervisor | Oracle VirtualBox |
-
-### Ubuntu virtual machine — SOC-Ubuntu
-
-| Setting | Configuration |
-|---|---|
-| Operating system | Ubuntu Server 24.04.5 LTS, AMD64 |
-| VM memory | 2 GB |
-| Virtual CPU | 1 |
-| Virtual disk | 40.48 GB |
-| Adapter 1 | NAT — internet access |
-| Adapter 2 | Host-only — host/guest lab communication |
-| NAT SSH forwarding | Windows localhost TCP 2222 → Ubuntu TCP 22 |
-
-Ubuntu is installed, updated, and accessible from Windows through SSH. The Host-only network was configured for direct communication between Windows and Ubuntu while NAT remains available for outbound connectivity.
-
-### SIEM host
-
-Splunk Enterprise is installed on the Windows host. The web dashboard is accessible locally, the TCP receiving port **9997** is enabled, and Windows Event Log input has been created.
-
-| Endpoint | Lab address |
-|---|---|
-| Windows Host-only adapter | `192.168.56.1` |
-| Ubuntu Host-only interface | `192.168.56.10` |
-| Splunk receiving port | TCP `9997` |
-
-> **Hardware note:** The host has 8 GB RAM and a 2-core CPU. Local Wazuh all-in-one deployment is deferred. The lab prioritises Splunk on Windows and one lightweight Ubuntu VM.
-
-## 🧰 Technology stack
-
-| Area | Technology | Status |
-|---|---|---|
-| Virtualisation | Oracle VirtualBox | Configured |
-| Linux server | Ubuntu Server 24.04.5 LTS | Installed, updated, SSH-accessible |
-| Primary SIEM | Splunk Enterprise | Installed and operational on Windows |
-| Windows telemetry | Windows Event Logs | Security and other local event channels configured |
-| Event investigation | Splunk Search Processing Language (SPL) | Initial 4624/4625 searches completed |
-| Linux telemetry | Splunk Universal Forwarder 10.4.3 | Installed; `/var/log/auth.log` forwarding verified |
-| Future SIEM option | Wazuh | Deferred due to host resource limits |
-| Network analysis | Wireshark | Planned |
-| Network detection | Suricata | Optional; hardware permitting |
-| Threat intelligence | VirusTotal, AbuseIPDB | Planned |
-| File analysis | YARA | Planned |
-| Threat intelligence platform | MISP | Optional; hardware permitting |
-
-## 🎓 LetsDefend SOC Analyst Learning Path
+### LetsDefend — SOC Analyst Learning Path
 
 **Status:** Completed  
 **Completion:** November 2026  
-**Achievement:** Completed the hands-on SOC Analyst Learning Path on LetsDefend and earned the course completion certificate.
+**Credential:** Course completion certificate earned.
 
-### Skills covered
+Skills covered in the learning path:
 
 - Security Operations Center (SOC)
 - Security Information and Event Management (SIEM)
@@ -115,62 +38,66 @@ Splunk Enterprise is installed on the Windows host. The web dashboard is accessi
 - Threat Detection
 - Network Security
 
-This training complements the practical Splunk and Windows/Linux log-monitoring work documented in this repository. The certificate is a course-completion credential; practical capabilities are demonstrated separately through the home-lab configuration and investigation evidence.
+### Practical home-lab skills
 
-## 🔎 Completed monitoring exercise
+- Splunk Enterprise and foundational SPL searches
+- Windows Event Log collection and review
+- Linux authentication log monitoring
+- Splunk Universal Forwarder configuration
+- SSH authentication-event analysis
+- Threshold-based detection logic
+- Scheduled alert configuration and validation
+- VirtualBox networking and Linux command-line fundamentals
 
-### Windows Security Event Log collection
+## Lab architecture
 
-- Created a Splunk **Local Event Logs** input on the Windows host.
-- Selected the available Windows Event Log channels, including **Security**, **System**, and **Application**.
-- Confirmed events are indexed with source `WinEventLog:Security` and sourcetype `WinEventLog:Security`.
-- Observed **9,298 Security events** in one search result at the time of verification (a point-in-time count, not a fixed total).
-- Queried successful logons (Event ID `4624`): **408 events** returned in the captured search.
-- Queried failed logons (Event ID `4625`): **4 events** returned in the later investigation search.
-
-Detailed notes and SPL queries: [Windows Security Log Investigation](Reports/windows-security-log-investigation.md).
-
-## 🚨 Scheduled detection alert
-
-A scheduled alert named **SSH - Multiple Failed Login Attempts** has been created in Splunk Enterprise.
-
-| Configuration | Verified value |
+| Component | Configuration |
 |---|---|
-| Status | Enabled (saved in Splunk) |
-| Alert type | Scheduled |
-| Schedule | Every 5 minutes (`*/5 * * * *`) |
-| Trigger condition | Number of results greater than 0 |
-| Trigger action | Log Event |
-| Sharing | Private |
-| Confirmed fired event | Nov 7, 2026, 3:00:02 PM IST |
-| Log Event output | Confirmed in `main` index |
+| Host operating system | Windows 10 Pro 64-bit |
+| Host hardware | HP ProDesk 400 G1 SFF, Intel Core i3-4160, 8 GB RAM |
+| Virtualisation | Oracle VirtualBox |
+| Linux virtual machine | Ubuntu Server 24.04.5 LTS |
+| SIEM | Splunk Enterprise 10.6.1.1 on Windows |
+| Linux log forwarder | Splunk Universal Forwarder 10.4.3 |
+| Splunk receiving port | TCP 9997 |
+| Linux log source | `/var/log/auth.log` |
+| Windows telemetry | Windows Event Logs, including Security |
 
-**Validation result:** The detection search returned three failed SSH attempts for `wronguser` from `10.0.2.2` on `soc-ubuntu`. The scheduled alert was changed to run every five minutes with a five-minute search time range. A fired Log Event was then confirmed in the `main` index at **Nov 7, 2026, 3:00:02 PM IST**, with the message: `SSH failed login threshold reached: wronguser from 10.0.2.2 with 3 failures.` This validates the lab alert path. The Splunk UI had warned that scheduled searches stop after the Enterprise Trial License expires.
+**Resource note:** The host has 8 GB RAM and a dual-core processor. The lab is intentionally kept lightweight; a local Wazuh all-in-one deployment has been deferred.
 
-## 🗺️ Project roadmap
+## Completed practical exercises
 
-- [x] Create the GitHub repository and project README.
-- [x] Create the SOC-Ubuntu VirtualBox VM.
-- [x] Install and update Ubuntu Server 24.04.5 LTS.
-- [x] Configure SSH access from Windows through NAT port forwarding.
-- [x] Add a Host-only network for Windows/Ubuntu communication.
-- [x] Install Splunk Enterprise on Windows and verify the dashboard.
-- [x] Enable Splunk TCP receiving on port 9997.
-- [x] Create a Windows Local Event Logs input in Splunk.
-- [x] Verify Windows Security events are searchable.
-- [x] Run initial SPL searches for Event IDs 4624 and 4625.
-- [x] Document the first failed-logon event review.
-- [x] Install Splunk Universal Forwarder on Ubuntu and forward Linux authentication logs.
-- [x] Verify Ubuntu `auth.log` events arrive in Windows Splunk.
-- [x] Run a controlled failed SSH login test and build a threshold-based SPL search.
-- [x] Create and enable a scheduled Splunk alert for the SSH failed-login threshold.
-- [x] Verify the alert fires on its five-minute schedule; confirmed event at 3:00:02 PM IST on Nov 7, 2026.
-- [x] Review alert execution and confirm the Log Event action writes to the `main` index.
-- [x] Complete final evidence review and portfolio documentation.
+### 1. Windows Security Event Log monitoring
 
+- Configured Splunk Local Event Logs input on the Windows host.
+- Collected Security, System, and Application event channels.
+- Verified that Windows Security events were searchable in Splunk.
+- Practised searches for:
+  - Event ID `4624` — successful logon
+  - Event ID `4625` — failed logon
 
+Detailed documentation: [Windows Security Log Investigation](Reports/windows-security-log-investigation.md).
 
-## 📁 Repository structure
+### 2. Ubuntu authentication log forwarding
+
+- Installed Splunk Universal Forwarder on Ubuntu Server.
+- Configured monitoring of `/var/log/auth.log`.
+- Verified that Linux authentication events were forwarded to Splunk on the Windows host.
+- Reviewed SSH authentication events in the SIEM.
+
+### 3. SSH failed-login detection and alert validation
+
+- Generated controlled failed SSH login attempts in the authorised home lab.
+- Created an SPL search to extract username and source IP and count repeated failures.
+- Configured a threshold of three or more failed attempts within a five-minute search window.
+- Created a scheduled alert that runs every five minutes.
+- Verified that the alert fired and its Log Event action wrote an event to the Splunk `main` index.
+
+The test events were deliberately generated for this lab and should not be represented as a real external attack. The Splunk trial environment displayed a warning that scheduled searches would stop after the trial licence expires.
+
+Detailed documentation: [Ubuntu SSH Failed-Login Detection](Reports/ubuntu-ssh-failed-login-detection.md).
+
+## Repository structure
 
 ```text
 SOC-Home-Lab/
@@ -181,47 +108,39 @@ SOC-Home-Lab/
 │   ├── windows-security-log-investigation.md
 │   └── ubuntu-ssh-failed-login-detection.md
 └── Screenshots/
-    ├── Screenshot (187).png
-    └── download.png
 ```
 
-The repository contains the VirtualBox setup guide, Windows and Ubuntu investigation reports, and two image files under `Screenshots/`.
+## Tools and technologies
 
-## 📝 Evidence and documentation standard
+| Category | Tools / technologies |
+|---|---|
+| SIEM | Splunk Enterprise |
+| Log collection | Splunk Universal Forwarder |
+| Operating systems | Windows 10, Ubuntu Server |
+| Virtualisation | Oracle VirtualBox |
+| Query language | Splunk Processing Language (SPL) |
+| Telemetry | Windows Event Logs, Linux `auth.log` |
 
-Each lab exercise should record:
+Tools such as Wazuh, Wireshark, Suricata, YARA, and threat-intelligence platforms are potential future learning areas; they are not claimed as completed hands-on work in this project.
 
-- Objective and authorised scope
-- Lab topology and prerequisites
-- Tools and versions actually used
-- Configuration steps and SPL queries
-- Test procedure and observed results
-- Analysis, conclusion, and limitations
-- Redacted screenshots or sample logs where available
+## Learning roadmap
 
-Only verified work is marked completed. Two screenshot image files are present in `Screenshots/`; review their contents, filenames, captions, and redaction before treating them as formal evidence.
+- [x] Build the VirtualBox lab environment.
+- [x] Install and configure Ubuntu Server.
+- [x] Configure SSH access between the Windows host and Ubuntu VM.
+- [x] Install Splunk Enterprise on Windows.
+- [x] Configure Windows Event Log collection.
+- [x] Search and review Windows authentication events.
+- [x] Install Splunk Universal Forwarder on Ubuntu.
+- [x] Forward and search Linux authentication logs.
+- [x] Create an SSH failed-login threshold detection.
+- [x] Configure and validate a scheduled Splunk alert.
+- [x] Complete the LetsDefend SOC Analyst Learning Path and earn its completion certificate.
 
-## 🔐 Safety
+## Safety and scope
 
-- Testing is restricted to systems and networks owned by the author or explicitly authorised for testing.
-- No public targets or third-party systems are to be scanned or attacked.
-- Never commit passwords, access tokens, API keys, private keys, or other secrets.
-- Redact personal information, public IP addresses, host identifiers, and sensitive log data before publishing evidence.
-- Do not upload VM disk images, installer ISOs, or large raw log exports.
+All testing documented here was performed in a personal lab or on systems under the author's control. No third-party systems were targeted. Sensitive credentials, tokens, and private keys must never be committed to this repository. Screenshots and logs should be reviewed and redacted before publication.
 
-## 👨‍💻 Author
+---
 
-**Shaikh A Shoaib**
-
-This repository is a learning portfolio documenting practical cybersecurity lab work. It is not a production SOC implementation.
-
-<div align="center">
-
-![GitHub last commit](https://img.shields.io/github/last-commit/shaikhashoaib/SOC-Home-Lab?style=flat-square&color=0EA5E9)
-![GitHub repo size](https://img.shields.io/github/repo-size/shaikhashoaib/SOC-Home-Lab?style=flat-square&color=0F766E)
-
-<sub>Built with curiosity, documented with evidence. 🚀</sub>
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00B8D9,50:123B5D,100:081A2F&height=90&section=footer" width="100%" alt="" />
-
-</div>
+*This repository is a learning portfolio demonstrating foundational SOC Analyst L1 practice through documented home-lab exercises and completed training.*
