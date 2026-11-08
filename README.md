@@ -101,6 +101,22 @@ Splunk Enterprise is installed on the Windows host. The web dashboard is accessi
 | File analysis | YARA | Planned |
 | Threat intelligence platform | MISP | Optional; hardware permitting |
 
+## 🎓 LetsDefend SOC Analyst Learning Path
+
+**Status:** Completed  
+**Completion:** November 2026  
+**Achievement:** Completed the hands-on SOC Analyst Learning Path on LetsDefend and earned the course completion certificate.
+
+### Skills covered
+
+- Security Operations Center (SOC)
+- Security Information and Event Management (SIEM)
+- Incident Investigation
+- Threat Detection
+- Network Security
+
+This training complements the practical Splunk and Windows/Linux log-monitoring work documented in this repository. The certificate is a course-completion credential; practical capabilities are demonstrated separately through the home-lab configuration and investigation evidence.
+
 ## 🔎 Completed monitoring exercise
 
 ### Windows Security Event Log collection
