@@ -16,10 +16,11 @@ This file tracks completed training and practical exercises. Only completed acti
 - [x] SOC Role in Blue Team
 - [x] Humans as Attack Vectors
 - [x] Systems as Attack Vectors
+- [x] SOC L1 Alert Triage
 - [x] Phishing Emails in Action
 - [x] ParrotPost: Phishing Analysis
 
-The completed rooms provide guided practice in SOC and blue-team roles, human-focused and systems-focused attack vectors, phishing-email investigation, and phishing analysis. The full SOC Level 1 path contains 14 sections. Completion of individual rooms does not mean the full path is complete.
+The completed rooms provide guided practice in SOC and blue-team roles, human-focused and systems-focused attack vectors, SOC L1 alert triage, phishing-email investigation, and phishing analysis. The full SOC Level 1 path contains 14 sections. Completion of individual rooms does not mean the full path is complete.
 
 ## Practical experience — personal home lab
 
@@ -58,6 +59,7 @@ All activity above is simulated home-lab practice, not production SOC employment
 - Linux authentication logs
 - SSH failed-login detection
 - Basic alert configuration and validation
+- Alert triage and true-positive classification in a guided SOC simulation
 - Incident evidence documentation
 
 ## SOC Level 1 learning path — planned coverage
