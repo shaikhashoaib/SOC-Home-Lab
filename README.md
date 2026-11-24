@@ -36,10 +36,11 @@ Completed related rooms:
 - SOC Role in Blue Team
 - Humans as Attack Vectors
 - Systems as Attack Vectors
+- SOC L1 Alert Triage
 - Phishing Emails in Action
 - ParrotPost: Phishing Analysis
 
-Learning areas practised through these rooms include SOC and blue-team roles, introductory security operations, human-focused attack vectors, phishing-email investigation, and phishing analysis.
+Learning areas practised through these rooms include SOC and blue-team roles, introductory security operations, human-focused and systems-focused attack vectors, SOC L1 alert triage, phishing-email investigation, and phishing analysis.
 
 The full SOC Level 1 learning path contains 14 sections covering SOC operations, SIEM, EDR/SOAR, security frameworks, phishing, network and web monitoring, Windows/Linux threat detection, malware concepts, threat intelligence, SIEM triage, and capstone investigations. These are learning-path objectives; they are **not** all claimed as completed.
 
@@ -153,7 +154,7 @@ Tools such as Wazuh, Wireshark, Suricata, YARA, and threat-intelligence platform
 - [x] Create an SSH failed-login threshold detection.
 - [x] Configure and validate a scheduled Splunk alert.
 - [x] Complete the LetsDefend SOC Analyst Learning Path and earn its completion certificate.
-- [x] Complete six related TryHackMe rooms listed above.
+- [x] Complete seven related TryHackMe rooms listed above.
 - [ ] Complete all required rooms and capstone challenges in the TryHackMe SOC Level 1 learning path.
 - [ ] Earn the TryHackMe SOC Level 1 learning-path completion certificate.
 
