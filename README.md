@@ -35,6 +35,7 @@ Completed related rooms:
 - Junior Security Analyst Intro
 - SOC Role in Blue Team
 - Humans as Attack Vectors
+- Systems as Attack Vectors
 - Phishing Emails in Action
 - ParrotPost: Phishing Analysis
 
@@ -152,7 +153,7 @@ Tools such as Wazuh, Wireshark, Suricata, YARA, and threat-intelligence platform
 - [x] Create an SSH failed-login threshold detection.
 - [x] Configure and validate a scheduled Splunk alert.
 - [x] Complete the LetsDefend SOC Analyst Learning Path and earn its completion certificate.
-- [x] Complete five related TryHackMe rooms listed above.
+- [x] Complete six related TryHackMe rooms listed above.
 - [ ] Complete all required rooms and capstone challenges in the TryHackMe SOC Level 1 learning path.
 - [ ] Earn the TryHackMe SOC Level 1 learning-path completion certificate.
 
