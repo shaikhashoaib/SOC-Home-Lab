@@ -14,10 +14,11 @@ This file tracks completed training and practical exercises. Only completed acti
 
 - [x] Junior Security Analyst Intro
 - [x] SOC Role in Blue Team
+- [x] Humans as Attack Vectors
 - [x] Phishing Emails in Action
 - [x] ParrotPost: Phishing Analysis
 
-The full SOC Level 1 path contains 14 sections. Completion of individual rooms does not mean the full path is complete.
+The completed rooms provide guided practice in SOC and blue-team roles, human-focused attack vectors, phishing-email investigation, and phishing analysis. The full SOC Level 1 path contains 14 sections. Completion of individual rooms does not mean the full path is complete.
 
 ## Practical experience — personal home lab
 
@@ -48,6 +49,7 @@ All activity above is simulated home-lab practice, not production SOC employment
 ## Topics practised
 
 - SOC and blue-team roles
+- Human-focused attack vectors
 - Introductory security operations
 - Phishing email analysis
 - Splunk search fundamentals
