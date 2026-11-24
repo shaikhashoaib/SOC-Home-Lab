@@ -1,6 +1,6 @@
 # SOC Analyst L1 — Security Operations Home Lab
 
-A practical cybersecurity portfolio documenting hands-on work with SIEM monitoring, Windows and Linux log collection, authentication-event analysis, and alert creation.
+A practical cybersecurity portfolio documenting hands-on work with SIEM monitoring, Windows and Linux log collection, authentication-event analysis, alert creation, and guided SOC investigation training.
 
 **Author:** Shaikh A Shoaib  
 **Focus:** SOC Analyst L1 | SIEM | Security Monitoring | Incident Investigation
@@ -20,9 +20,28 @@ The project demonstrates:
 - Configuring and validating a scheduled Splunk alert.
 - Recording configuration, investigation steps, and observed results.
 
-This is a personal learning environment, not a production SOC deployment.
+This is a personal learning environment, not a production SOC deployment or professional SOC employment.
 
-## Skills and learning
+## Training progress and credentials
+
+### TryHackMe — SOC Level 1
+
+**Status:** In progress  
+**Subscription:** Premium active (November 2026)  
+**Target:** Complete the SOC Level 1 learning path through guided labs and capstone investigations.
+
+Completed related rooms:
+
+- Junior Security Analyst Intro
+- SOC Role in Blue Team
+- Phishing Emails in Action
+- ParrotPost: Phishing Analysis
+
+Learning areas practised through these rooms include SOC and blue-team roles, introductory security operations, phishing-email investigation, and phishing analysis.
+
+The full SOC Level 1 learning path contains 14 sections covering SOC operations, SIEM, EDR/SOAR, security frameworks, phishing, network and web monitoring, Windows/Linux threat detection, malware concepts, threat intelligence, SIEM triage, and capstone investigations. These are learning-path objectives; they are **not** all claimed as completed.
+
+**TryHackMe SOC Level 1 path certificate:** Not yet earned. It will be listed here after the complete path requirements are finished.
 
 ### LetsDefend — SOC Analyst Learning Path
 
@@ -30,15 +49,22 @@ This is a personal learning environment, not a production SOC deployment.
 **Completion:** November 2026  
 **Credential:** Course completion certificate earned.
 
-Skills covered in the learning path:
+Skills covered:
 
-- Security Operations Center (SOC)
-- Security Information and Event Management (SIEM)
-- Incident Investigation
-- Threat Detection
-- Network Security
+- Security Operations Center (SOC) fundamentals
+- SIEM concepts
+- Incident investigation
+- Threat detection
+- Network security
 
-### Practical home-lab skills
+### Additional coursework
+
+**SOC Analyst Level 1 & 2 Masterclass — Splunk, Wazuh and investigations (Udemy)**  
+**Status:** Course completed.
+
+Course completion is recorded as training; no separate professional certification is claimed here.
+
+## Practical home-lab skills
 
 - Splunk Enterprise and foundational SPL searches
 - Windows Event Log collection and review
@@ -48,6 +74,7 @@ Skills covered in the learning path:
 - Threshold-based detection logic
 - Scheduled alert configuration and validation
 - VirtualBox networking and Linux command-line fundamentals
+- Basic incident evidence review and documentation
 
 ## Lab architecture
 
@@ -97,19 +124,6 @@ The test events were deliberately generated for this lab and should not be repre
 
 Detailed documentation: [Ubuntu SSH Failed-Login Detection](Reports/ubuntu-ssh-failed-login-detection.md).
 
-## Repository structure
-
-```text
-SOC-Home-Lab/
-├── README.md
-├── Setup/
-│   └── virtualbox-setup.md
-├── Reports/
-│   ├── windows-security-log-investigation.md
-│   └── ubuntu-ssh-failed-login-detection.md
-└── Screenshots/
-```
-
 ## Tools and technologies
 
 | Category | Tools / technologies |
@@ -120,8 +134,9 @@ SOC-Home-Lab/
 | Virtualisation | Oracle VirtualBox |
 | Query language | Splunk Processing Language (SPL) |
 | Telemetry | Windows Event Logs, Linux `auth.log` |
+| Guided SOC training | TryHackMe, LetsDefend |
 
-Tools such as Wazuh, Wireshark, Suricata, YARA, and threat-intelligence platforms are potential future learning areas; they are not claimed as completed hands-on work in this project.
+Tools such as Wazuh, Wireshark, Suricata, YARA, and threat-intelligence platforms are potential future learning areas unless documented as completed exercises elsewhere in this repository.
 
 ## Learning roadmap
 
@@ -136,6 +151,9 @@ Tools such as Wazuh, Wireshark, Suricata, YARA, and threat-intelligence platform
 - [x] Create an SSH failed-login threshold detection.
 - [x] Configure and validate a scheduled Splunk alert.
 - [x] Complete the LetsDefend SOC Analyst Learning Path and earn its completion certificate.
+- [x] Complete four related TryHackMe rooms listed above.
+- [ ] Complete all required rooms and capstone challenges in the TryHackMe SOC Level 1 learning path.
+- [ ] Earn the TryHackMe SOC Level 1 learning-path completion certificate.
 
 ## Safety and scope
 
@@ -143,4 +161,4 @@ All testing documented here was performed in a personal lab or on systems under 
 
 ---
 
-*This repository is a learning portfolio demonstrating foundational SOC Analyst L1 practice through documented home-lab exercises and completed training.*
+*This repository is a learning portfolio demonstrating foundational SOC Analyst L1 practice through documented home-lab exercises and completed training. Lab work is not represented as professional employment experience.*
