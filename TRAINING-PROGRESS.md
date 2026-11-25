@@ -21,6 +21,7 @@ This file tracks completed training and practical exercises. Only completed acti
 - [x] SOC Workbooks and Lookups
 - [x] SOC Metrics and Objectives
 - [x] Introduction to EDR
+- [x] Introduction to SIEM
 - [x] Phishing Emails in Action
 - [x] ParrotPost: Phishing Analysis
 
@@ -72,6 +73,7 @@ All activity above is simulated home-lab practice, not production SOC employment
 - Understanding SOC performance metrics: Mean Time to Detect (MTTD), Mean Time to Acknowledge (MTTA), and Mean Time to Respond (MTTR), including their relevance to SLAs
 - Learning how SOC metrics can be tracked and improved
 - Understanding EDR architecture and how EDR extends beyond traditional antivirus
+- Understanding SIEM purpose, core capabilities, and the visibility it provides across security events
 - Reviewing endpoint telemetry and EDR detection and response capabilities
 - Practising investigation of detections in a simulated EDR environment
 - Incident evidence documentation
