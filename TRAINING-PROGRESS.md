@@ -19,10 +19,11 @@ This file tracks completed training and practical exercises. Only completed acti
 - [x] SOC L1 Alert Triage
 - [x] SOC L1 Alert Reporting
 - [x] SOC Workbooks and Lookups
+- [x] SOC Metrics and Objectives
 - [x] Phishing Emails in Action
 - [x] ParrotPost: Phishing Analysis
 
-The completed rooms provide guided practice in SOC and blue-team roles, human-focused and systems-focused attack vectors, SOC L1 alert triage, alert reporting, escalation procedures and SOC communication, use of asset-inventory and network-map lookups, SOC workbooks, phishing-email investigation, and phishing analysis. The full SOC Level 1 path contains 14 sections. Completion of individual rooms does not mean the full path is complete.
+The completed rooms provide guided practice in SOC and blue-team roles, human-focused and systems-focused attack vectors, SOC L1 alert triage, alert reporting, escalation procedures and SOC communication, use of asset-inventory and network-map lookups, SOC workbooks, SOC performance metrics including MTTD, MTTA and MTTR, false-positive and threat-detection rates, phishing-email investigation, and phishing analysis. The full SOC Level 1 path contains 14 sections. Completion of individual rooms does not mean the full path is complete.
 
 ## Practical experience — personal home lab
 
@@ -66,6 +67,9 @@ All activity above is simulated home-lab practice, not production SOC employment
 - Understanding escalation procedures and cross-team communication
 - Using existing asset-inventory and network-map lookups to add context during alert investigations
 - Understanding how SOC workbooks standardise and streamline analyst procedures
+- Understanding SOC internal metrics: false-positive rate and threat-detection rate
+- Understanding SOC performance metrics: Mean Time to Detect (MTTD), Mean Time to Acknowledge (MTTA), and Mean Time to Respond (MTTR), including their relevance to SLAs
+- Learning how SOC metrics can be tracked and improved
 - Incident evidence documentation
 
 ## SOC Level 1 learning path — planned coverage
