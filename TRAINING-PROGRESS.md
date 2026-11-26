@@ -24,10 +24,17 @@ This file tracks completed training and practical exercises. Only completed acti
 - [x] Introduction to SIEM
 - [x] Splunk: The Basics
 - [x] Elastic Stack: The Basics
+- [x] Introduction to SOAR
 - [x] Phishing Emails in Action
 - [x] ParrotPost: Phishing Analysis
 
 The completed rooms provide guided practice in SOC and blue-team roles, human-focused and systems-focused attack vectors, SOC L1 alert triage, alert reporting, escalation procedures and SOC communication, use of asset-inventory and network-map lookups, SOC workbooks, SOC performance metrics including MTTD, MTTA and MTTR, false-positive and threat-detection rates, EDR architecture and telemetry, endpoint detection and response capabilities, simulated EDR alert investigation, SIEM purpose and capabilities, centralised log visibility, Splunk core components and interface, data upload and foundational Splunk SIEM operation, Elastic Stack (ELK) components, log collection and parsing, log searching, VPN-log investigation, dashboard visualisation, phishing-email investigation, and phishing analysis. The full SOC Level 1 path contains 14 sections. Completion of individual rooms does not mean the full path is complete.
+
+## Latest room completed — Introduction to SOAR
+
+- Reviewed traditional SOC processes and their operational challenges.
+- Learned how SOAR uses orchestration, automation and response to streamline SOC workflows.
+- Examined SOC playbooks and developed a threat-intelligence workflow for automation.
 
 ## Practical experience — personal home lab
 
@@ -79,6 +86,8 @@ All activity above is simulated home-lab practice, not production SOC employment
 - Learning Splunk core components and interface, uploading data, and foundational Splunk SIEM operation
 - Understanding Elastic Stack (ELK) components and its use in SOC log monitoring and investigation
 - Practising log collection, parsing, searching, VPN-log investigation, and dashboard visualisation in ELK
+- Understanding SOAR orchestration, automation and response
+- Reviewing SOC playbooks and designing a threat-intelligence automation workflow
 - Reviewing endpoint telemetry and EDR detection and response capabilities
 - Practising investigation of detections in a simulated EDR environment
 - Incident evidence documentation
