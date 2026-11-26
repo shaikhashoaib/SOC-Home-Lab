@@ -35,8 +35,9 @@ The completed rooms provide guided practice in SOC and blue-team roles, human-fo
 
 ### Pyramid of Pain
 
-- Studied the Pyramid of Pain framework and how different types of indicators vary in the difficulty they cause an adversary to change.
-- Connected the framework to threat intelligence and detection strategy.
+- Studied the Pyramid of Pain framework and how different indicators vary in the difficulty they cause an adversary to change.
+- Reviewed the progression from hashes and IP addresses through domains, network/host artifacts, tools, and TTPs.
+- Connected the framework to threat intelligence and detection strategy, recognising why behaviour- and TTP-based detections can be more durable than relying only on easily changed indicators.
 
 ### Introduction to SOAR
 
