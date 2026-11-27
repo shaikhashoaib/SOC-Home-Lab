@@ -28,12 +28,18 @@ This file tracks completed training and practical exercises. Only completed acti
 - [x] Pyramid of Pain
 - [x] Cyber Kill Chain
 - [x] Unified Kill Chain
+- [x] MITRE
 - [x] Phishing Emails in Action
 - [x] ParrotPost: Phishing Analysis
 
-The completed rooms provide guided practice in SOC and blue-team roles, human-focused and systems-focused attack vectors, SOC L1 alert triage, alert reporting, escalation procedures and SOC communication, use of asset-inventory and network-map lookups, SOC workbooks, SOC performance metrics including MTTD, MTTA and MTTR, false-positive and threat-detection rates, EDR architecture and telemetry, endpoint detection and response capabilities, simulated EDR alert investigation, SIEM purpose and capabilities, centralised log visibility, Splunk core components and interface, data upload and foundational Splunk SIEM operation, Elastic Stack (ELK) components, log collection and parsing, log searching, VPN-log investigation, dashboard visualisation, phishing-email investigation, and phishing analysis. The full SOC Level 1 path contains 14 sections. Completion of individual rooms does not mean the full path is complete.
+The completed 19 related rooms provide guided practice in SOC and blue-team roles, human-focused and systems-focused attack vectors, SOC L1 alert triage, alert reporting, escalation procedures and SOC communication, use of asset-inventory and network-map lookups, SOC workbooks, SOC performance metrics including MTTD, MTTA and MTTR, false-positive and threat-detection rates, EDR architecture and telemetry, endpoint detection and response capabilities, simulated EDR alert investigation, SIEM purpose and capabilities, centralised log visibility, Splunk core components and interface, data upload and foundational Splunk SIEM operation, Elastic Stack (ELK) components, log collection and parsing, log searching, VPN-log investigation, dashboard visualisation, phishing-email investigation, and phishing analysis. The full SOC Level 1 path contains 14 sections. Completion of individual rooms does not mean the full path is complete. The MITRE room introduced the MITRE ATT&CK framework for describing and mapping adversary tactics and techniques.
 
 ## Latest rooms completed
+
+### MITRE
+
+- Studied the MITRE ATT&CK framework as a structured knowledge base of adversary tactics and techniques.
+- Learned how ATT&CK can help SOC analysts map observed behaviours to attacker techniques, support threat hunting, and improve detection coverage.
 
 ### Unified Kill Chain
 
