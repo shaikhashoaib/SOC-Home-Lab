@@ -27,12 +27,18 @@ This file tracks completed training and practical exercises. Only completed acti
 - [x] Introduction to SOAR
 - [x] Pyramid of Pain
 - [x] Cyber Kill Chain
+- [x] Unified Kill Chain
 - [x] Phishing Emails in Action
 - [x] ParrotPost: Phishing Analysis
 
 The completed rooms provide guided practice in SOC and blue-team roles, human-focused and systems-focused attack vectors, SOC L1 alert triage, alert reporting, escalation procedures and SOC communication, use of asset-inventory and network-map lookups, SOC workbooks, SOC performance metrics including MTTD, MTTA and MTTR, false-positive and threat-detection rates, EDR architecture and telemetry, endpoint detection and response capabilities, simulated EDR alert investigation, SIEM purpose and capabilities, centralised log visibility, Splunk core components and interface, data upload and foundational Splunk SIEM operation, Elastic Stack (ELK) components, log collection and parsing, log searching, VPN-log investigation, dashboard visualisation, phishing-email investigation, and phishing analysis. The full SOC Level 1 path contains 14 sections. Completion of individual rooms does not mean the full path is complete.
 
 ## Latest rooms completed
+
+### Unified Kill Chain
+
+- Studied the Unified Kill Chain as a broader extension of attack-chain thinking.
+- Learned how reconstructing attacker activities can help identify risks, security gaps, detection opportunities, and mitigations across an intrusion.
 
 ### Cyber Kill Chain
 
@@ -105,6 +111,7 @@ All activity above is simulated home-lab practice, not production SOC employment
 - Reviewing SOC playbooks and designing a threat-intelligence automation workflow
 - Understanding the Pyramid of Pain and the relative value of indicators for threat intelligence and detection
 - Understanding the seven stages of the Cyber Kill Chain and opportunities for early detection and disruption
+- Understanding the Unified Kill Chain as a broader model for reconstructing intrusion activity and identifying mitigation opportunities
 - Reviewing endpoint telemetry and EDR detection and response capabilities
 - Practising investigation of detections in a simulated EDR environment
 - Incident evidence documentation
