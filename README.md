@@ -30,7 +30,7 @@ This is a personal learning environment, not a production SOC deployment or prof
 **Subscription:** Premium active (November 2026)  
 **Target:** Complete the SOC Level 1 learning path through guided labs and capstone investigations.
 
-Completed related rooms (19):
+Completed related rooms (20):
 
 - Junior Security Analyst Intro
 - SOC Role in Blue Team
@@ -49,6 +49,7 @@ Completed related rooms (19):
 - Cyber Kill Chain
 - Unified Kill Chain
 - MITRE
+- Summit
 - Phishing Emails in Action
 - ParrotPost: Phishing Analysis
 
@@ -166,7 +167,7 @@ Tools such as Wazuh, Wireshark, Suricata, YARA, and threat-intelligence platform
 - [x] Create an SSH failed-login threshold detection.
 - [x] Configure and validate a scheduled Splunk alert.
 - [x] Complete the LetsDefend SOC Analyst Learning Path and earn its completion certificate.
-- [x] Complete nineteen related TryHackMe rooms listed above.
+- [x] Complete twenty related TryHackMe rooms listed above.
 - [ ] Complete all required rooms and capstone challenges in the TryHackMe SOC Level 1 learning path.
 - [ ] Earn the TryHackMe SOC Level 1 learning-path completion certificate.
 
