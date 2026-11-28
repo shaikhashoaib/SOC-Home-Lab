@@ -30,7 +30,7 @@ This is a personal learning environment, not a production SOC deployment or prof
 **Subscription:** Premium active (November 2026)  
 **Target:** Complete the SOC Level 1 learning path through guided labs and capstone investigations.
 
-Completed related rooms (20):
+Completed related rooms (21):
 
 - Junior Security Analyst Intro
 - SOC Role in Blue Team
@@ -50,6 +50,7 @@ Completed related rooms (20):
 - Unified Kill Chain
 - MITRE
 - Summit
+- Eviction
 - Phishing Emails in Action
 - ParrotPost: Phishing Analysis
 
