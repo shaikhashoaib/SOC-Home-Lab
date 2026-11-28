@@ -30,7 +30,7 @@ This is a personal learning environment, not a production SOC deployment or prof
 **Subscription:** Premium active (November 2026)  
 **Target:** Complete the SOC Level 1 learning path through guided labs and capstone investigations.
 
-Completed related rooms (21):
+Completed related rooms (22):
 
 - Junior Security Analyst Intro
 - SOC Role in Blue Team
@@ -51,10 +51,11 @@ Completed related rooms (21):
 - MITRE
 - Summit
 - Eviction
+- Phishing Analysis Fundamentals
 - Phishing Emails in Action
 - ParrotPost: Phishing Analysis
 
-Learning areas practised through these rooms include SOC and blue-team roles, introductory security operations, human-focused and systems-focused attack vectors, SOC L1 alert triage, alert reporting, escalation procedures and SOC communication, use of asset-inventory and network-map lookups, SOC workbooks, SOC performance metrics including MTTD, MTTA and MTTR, false-positive and threat-detection rates, EDR architecture and telemetry, endpoint detection and response capabilities, simulated EDR alert investigation, SIEM purpose and capabilities, centralised log visibility, Splunk core components and interface, data upload and foundational Splunk SIEM operation, Elastic Stack (ELK) components, log collection and parsing, log searching, VPN-log investigation, and dashboard visualisation, phishing-email investigation, and phishing analysis, SOAR orchestration, automation and response concepts, SOC playbooks, a threat-intelligence automation workflow, and the Pyramid of Pain framework, including the relative difficulty of changing hashes, IP addresses, domains, network/host artifacts, tools, and TTPs, and the seven stages of the Cyber Kill Chain from reconnaissance through actions on objectives, the broader Unified Kill Chain model for reconstructing intrusion activity, identifying risks, and finding mitigation opportunities, and the MITRE ATT&CK framework for categorising adversary tactics and techniques.
+Learning areas practised through these rooms include SOC and blue-team roles, introductory security operations, human-focused and systems-focused attack vectors, SOC L1 alert triage, alert reporting, escalation procedures and SOC communication, use of asset-inventory and network-map lookups, SOC workbooks, SOC performance metrics including MTTD, MTTA and MTTR, false-positive and threat-detection rates, EDR architecture and telemetry, endpoint detection and response capabilities, simulated EDR alert investigation, SIEM purpose and capabilities, centralised log visibility, Splunk core components and interface, data upload and foundational Splunk SIEM operation, Elastic Stack (ELK) components, log collection and parsing, log searching, VPN-log investigation, and dashboard visualisation, phishing-email investigation, phishing analysis fundamentals, and phishing analysis, SOAR orchestration, automation and response concepts, SOC playbooks, a threat-intelligence automation workflow, and the Pyramid of Pain framework, including the relative difficulty of changing hashes, IP addresses, domains, network/host artifacts, tools, and TTPs, and the seven stages of the Cyber Kill Chain from reconnaissance through actions on objectives, the broader Unified Kill Chain model for reconstructing intrusion activity, identifying risks, and finding mitigation opportunities, and the MITRE ATT&CK framework for categorising adversary tactics and techniques.
 
 The full SOC Level 1 learning path contains 14 sections covering SOC operations, SIEM, EDR/SOAR, security frameworks, phishing, network and web monitoring, Windows/Linux threat detection, malware concepts, threat intelligence, SIEM triage, and capstone investigations. These are learning-path objectives; they are **not** all claimed as completed.
 
@@ -168,7 +169,7 @@ Tools such as Wazuh, Wireshark, Suricata, YARA, and threat-intelligence platform
 - [x] Create an SSH failed-login threshold detection.
 - [x] Configure and validate a scheduled Splunk alert.
 - [x] Complete the LetsDefend SOC Analyst Learning Path and earn its completion certificate.
-- [x] Complete twenty related TryHackMe rooms listed above.
+- [x] Complete twenty-two related TryHackMe rooms listed above.
 - [ ] Complete all required rooms and capstone challenges in the TryHackMe SOC Level 1 learning path.
 - [ ] Earn the TryHackMe SOC Level 1 learning-path completion certificate.
 
